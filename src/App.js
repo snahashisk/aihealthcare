@@ -6,8 +6,7 @@ import Dashboard from "./pages/Dashboard";
 function App() {
   return (
     <>
-      {/* <Login /> */}
-      <Registration />
+      <Dashboard />
     </>
   );
 }

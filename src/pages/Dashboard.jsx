@@ -8,6 +8,7 @@ import {
   faGear,
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import BmiChart from "../components/BmiChart";
 
 const Dashboard = () => {
   const [selectedItem, setSelectedItem] = useState("Dashboard");
@@ -16,8 +17,10 @@ const Dashboard = () => {
     setSelectedItem(item);
   };
 
+  const bmiValue = 20;
+
   return (
-    <div className="flex h-full w-full">
+    <div className="flex h-full w-full overflow-hidden">
       <div className="w-2/12 h-full p-8">
         <h2 className="text-xl font-bold text-teal-600">
           <span className="text-yellow-500">AI</span> HEALTHCARE
@@ -108,7 +111,7 @@ const Dashboard = () => {
             <p className="text-gray-500">Blood Group</p>
           </div>
         </div>
-        <div className="mt-10 flex gap-4 h-1/4 text-white">
+        <div className="mt-6 flex gap-4 h-1/4 text-white">
           <div className="w-1/3 bg-gradient-to-br from-teal-400 to-sky-400 rounded-2xl p-4 text-lg flex justify-between flex-col shadow-lg">
             <div>
               <p className="text-2xl">Temparature</p>
@@ -135,7 +138,53 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div>bmi meter</div>
+        <div className="w-full pt-8 flex">
+          <div className="w-1/2">
+            <h3 className="text-3xl font-semibold text-teal-500">BMI INDEX</h3>
+            <p className="text-sm w-4/5 pt-2 text-gray-600">
+              The Body Mass Index (BMI) is a numerical measure of an
+              individual's weight relative to their height. It categorizes
+              individuals as underweight (BMI ≤ 18.5), normal weight (18.5 ≤ BMI
+              ≤ 24.9), overweight (25.0 ≤ BMI ≤ 29.9), or obese (BMI ≥ 30.0).
+            </p>
+            <div className="flex items-center justify-center h-1/2">
+              <BmiChart bmiValue={bmiValue} />
+            </div>
+          </div>
+          <div className="w-1/2">
+            <h3 className="text-3xl font-semibold text-teal-500">
+              DISEASE PREDICTION
+            </h3>
+            <p className="text-sm text-gray-500 pt-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+              minus tenetur vel ea possimus.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-2">
+              <p className="px-2 py-1 bg-gradient-to-r from-sky-400 to-green-500 rounded-lg text-white shadow-md">
+                Skin Disease
+              </p>
+              <p className="px-2 py-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white shadow-md">
+                Scalp Disease
+              </p>
+              <p className="px-2 py-1 bg-gradient-to-r from-sky-500 to-teal-500 rounded-lg text-white shadow-md">
+                Eye Disease
+              </p>
+              <p className="px-2 py-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg text-white shadow-md">
+                Nail Disease
+              </p>
+              <p className="px-2 py-1 bg-gradient-to-r from-sky-500 to-fuchsia-500 rounded-lg text-white shadow-md">
+                Teeth Disease
+              </p>
+            </div>
+            <p className="text-sm text-gray-500 pt-2">
+              You can check and predict all these diseases through our web app
+              using our machine learning model
+            </p>
+            <button className="px-8 py-2 bg-teal-400 rounded-md text-white text-lg w-full mt-2">
+              Launch App
+            </button>
+          </div>
+        </div>
       </div>
       <div className="w-4/12 h-full bg-blue-200 p-8">3d model</div>
     </div>
