@@ -112,14 +112,14 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="mt-6 flex gap-4 h-1/4 text-white">
-          <div className="w-1/3 bg-gradient-to-br from-teal-400 to-sky-400 rounded-2xl p-4 text-lg flex justify-between flex-col shadow-lg">
+          <div className="w-1/3 bg-gradient-to-br from-teal-400 to-sky-500 rounded-2xl p-4 text-lg flex justify-between flex-col shadow-lg">
             <div>
               <p className="text-2xl">Temparature</p>
               <p className="text-sm">degree celcius</p>
             </div>
             <div className="text-6xl">36.6</div>
           </div>
-          <div className="w-1/3 bg-gradient-to-bl from-teal-400 to-lime-400 rounded-2xl p-4 flex justify-between flex-col shadow-lg">
+          <div className="w-1/3 bg-gradient-to-bl from-teal-400 to-lime-500 rounded-2xl p-4 flex justify-between flex-col shadow-lg">
             <div>
               <p className="text-2xl">Blood Sugar</p>
               <p className="text-sm">mg/dl</p>
@@ -128,7 +128,7 @@ const Dashboard = () => {
               120<span className="text-2xl">/60</span>
             </div>
           </div>
-          <div className="w-1/3 bg-gradient-to-tl from-teal-400 to-cyan-400 rounded-xl p-4 flex justify-between flex-col shadow-lg">
+          <div className="w-1/3 bg-gradient-to-tl from-teal-400 to-cyan-500 rounded-xl p-4 flex justify-between flex-col shadow-lg">
             <div>
               <p className="text-2xl">Blood Pressure</p>
               <p className="text-sm">mmhg</p>
@@ -151,7 +151,7 @@ const Dashboard = () => {
               <BmiChart bmiValue={bmiValue} />
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-1/2 flex flex-col gap-2">
             <h3 className="text-3xl font-semibold text-teal-500">
               DISEASE PREDICTION
             </h3>
@@ -180,7 +180,7 @@ const Dashboard = () => {
               You can check and predict all these diseases through our web app
               using our machine learning model
             </p>
-            <button className="px-8 py-2 bg-teal-400 rounded-md text-white text-lg w-full mt-2">
+            <button className="px-8 py-2 bg-teal-400 rounded-md text-white text-lg w-full">
               Launch App
             </button>
           </div>
