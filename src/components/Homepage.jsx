@@ -1,7 +1,13 @@
 import React from "react";
 import homeimage from "../img/homepage-1.png";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
+  const navigate = useNavigate();
+  const handleRegisterClick = () => {
+    navigate("/registration");
+  };
+
   return (
     <div className="h-full overflow-hidden relative">
       <div className="h-full w-full absolute">
@@ -20,12 +26,12 @@ const Homepage = () => {
             ullam quis accusantium itaque dolorem fuga perferendis eaque aperiam
             neque a? At sint similique eos sapiente optio modi cum ad delectus.
           </p>
-          <button className="px-8 py-2 bg-white rounded-md text-teal-600 text-lg">
+          <button
+            className="px-8 py-2 bg-white rounded-md text-teal-600 text-lg"
+            onClick={handleRegisterClick}
+          >
             Register Now
           </button>
-        </div>
-        <div>
-          <div></div>
         </div>
       </div>
     </div>

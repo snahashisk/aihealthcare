@@ -5,8 +5,17 @@ import {
   AiOutlineTwitter,
 } from "react-icons/ai";
 import bgimage from "../img/doc-2.png";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate("/dashboard");
+  };
+
+  const handleRegistration = () => {
+    navigate("/registration");
+  };
   const errorMessage = false;
   return (
     <div className="w-screen h-screen overflow-hidden flex">
@@ -87,13 +96,20 @@ const Login = () => {
               Forgot Password?
             </a>
           </div>
-          <button className="mt-8 mb-6 bg-teal-400 text-white font-medium w-full py-3 rounded-md">
+          <button
+            className="mt-8 mb-6 bg-teal-400 text-white font-medium w-full py-3 rounded-md"
+            onClick={handleLogin}
+          >
             Login
           </button>
         </form>
         <p className="text-center">
           Don't have an account?{" "}
-          <button to="/registration" className="text-teal-700 cursor-pointer">
+          <button
+            to="/registration"
+            className="text-teal-700 cursor-pointer"
+            onClick={handleRegistration}
+          >
             Create an account
           </button>
         </p>

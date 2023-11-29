@@ -4,8 +4,14 @@ import image2 from "../img/dis-2.jpg";
 import image3 from "../img/dis-3.jpg";
 import image4 from "../img/dis-4.jpg";
 import image5 from "../img/dis-5.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Feature = () => {
+  const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="h-full px-40 py-16 bg-teal-700 flex flex-col items-center">
       <div className="text-center text-white">
@@ -46,7 +52,10 @@ const Feature = () => {
           <p className="mb-4">42 Disease</p>
         </div>
       </div>
-      <button className="mt-16 px-8 py-2 rounded-md bg-teal-500 text-lg text-white">
+      <button
+        className="mt-16 px-8 py-2 rounded-md bg-teal-500 text-lg text-white"
+        onClick={handleLoginClick}
+      >
         Login For More
       </button>
     </div>

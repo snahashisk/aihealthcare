@@ -5,8 +5,13 @@ import {
   AiOutlineGoogle,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate("/login");
+  };
   const errorMessage = false;
   return (
     <div className="w-screen h-screen overflow-hidden flex flex-row-reverse">
@@ -103,12 +108,17 @@ const Registration = () => {
         <button
           type="submit"
           className="mt-8 mb-6 bg-teal-400 text-white font-medium w-full py-3 rounded-md"
+          onClick={handleLogin}
         >
           Register
         </button>
         <p className="text-center">
           Already have an account?{" "}
-          <button to="/" className="text-teal-700 cursor-pointer">
+          <button
+            to="/"
+            className="text-teal-700 cursor-pointer"
+            onClick={handleLogin}
+          >
             Login here
           </button>
         </p>
