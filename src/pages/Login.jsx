@@ -23,7 +23,7 @@ const Login = () => {
         <h1 className="text-2xl font-bold mb-8 text-teal-700">
           <span className="text-yellow-600">AI </span>HEALTHCARE
         </h1>
-        <h3 className="text-4xl font-semibold text-gray-400 mb-3">
+        <h3 className="text-4xl font-semibold text-gray-600 mb-3">
           Login to your Account
         </h3>
         <p className="text-gray-600">
@@ -46,7 +46,7 @@ const Login = () => {
         <p className="text-gray-500 text-center flex items-center">
           <span className="inline-block w-1/3 h-0.5 bg-gray-300 my-4"></span>
           <span
-            className={`w-2/5 text-md ${errorMessage ? "text-red-500" : ""}`}
+            className={`w-3/5 text-md ${errorMessage ? "text-red-500" : ""}`}
           >
             {errorMessage ? errorMessage : "or continue with email"}
           </span>{" "}
