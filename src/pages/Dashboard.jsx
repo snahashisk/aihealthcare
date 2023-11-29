@@ -7,6 +7,8 @@ import {
   faUser,
   faGear,
   faSignOutAlt,
+  faPenToSquare,
+  faMars,
 } from "@fortawesome/free-solid-svg-icons";
 import BmiChart from "../components/BmiChart";
 import CamModal from "../components/CamModal";
@@ -123,18 +125,24 @@ const Dashboard = () => {
         <div className="flex justify-between items-center">
           <div>
             <p className="text-gray-500">Good Morning</p>
-            <p className="text-5xl font-semibold text-teal-800">
-              {userInfo.name}
+            <p className="text-5xl font-semibold text-teal-800 flex items-center gap-4">
+              {userInfo.name}{" "}
+              <FontAwesomeIcon icon={faMars} className="text-3xl" />
             </p>
           </div>
           <div>
             <FontAwesomeIcon
+              icon={faPenToSquare}
+              className="mr-2 bg-teal-400 p-3 text-2xl rounded-md text-white drop-shadow-md cursor-pointer"
+              onClick={() => setIsFormModalOpen(true)}
+            />
+            <FontAwesomeIcon
               icon={faBell}
-              className="mr-2 bg-teal-400 p-4 text-2xl rounded-md text-white drop-shadow-md"
+              className="mr-2 bg-teal-400 p-3 text-2xl rounded-md text-white drop-shadow-md cursor-pointer"
             />
             <FontAwesomeIcon
               icon={faUser}
-              className="mr-2 bg-teal-400 p-4 text-2xl rounded-md text-white cursor-pointer drop-shadow-md"
+              className="mr-2 bg-teal-400 p-3 text-2xl rounded-md text-white cursor-pointer drop-shadow-md"
             />
           </div>
         </div>

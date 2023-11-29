@@ -34,11 +34,14 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
 
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-20">
-      <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-        <form onSubmit={handleSubmit}>
+      <div className="relative top-20 mx-auto border w-1/2 shadow-lg rounded-md bg-white">
+        <h3 className="bg-teal-500 w-full p-2 rounded-md text-white text-xl font-medium text-center">
+          Update Your Details
+        </h3>
+        <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-2 p-5">
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 text-md font-semibold mb-2"
               htmlFor="name"
             >
               Name
@@ -54,7 +57,7 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 text-md font-semibold mb-2"
               htmlFor="age"
             >
               Age
@@ -70,10 +73,10 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 text-md font-semibold mb-2"
               htmlFor="age"
             >
-              Age
+              Height
             </label>
             <input
               type="number"
@@ -86,7 +89,7 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 text-md font-semibold mb-2"
               htmlFor="age"
             >
               Weight
@@ -102,7 +105,7 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 text-md font-semibold mb-2"
               htmlFor="age"
             >
               Blood Group
@@ -118,23 +121,7 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="age"
-            >
-              Age
-            </label>
-            <input
-              type="number"
-              id="age"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              placeholder="Age"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 text-md font-semibold mb-2"
               htmlFor="age"
             >
               Temparature
@@ -142,7 +129,7 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
             <input
               type="number"
               id="temperature"
-              value={age}
+              value={temperature}
               onChange={(e) => setTemperature(e.target.value)}
               placeholder="Temparature"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -150,7 +137,7 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 text-md font-semibold mb-2"
               htmlFor="age"
             >
               Blood Pressure Systolic
@@ -160,14 +147,14 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
               id="bloodPressureSystolic"
               value={bloodPressureSystolic}
               onChange={(e) => setBloodPressureSystolic(e.target.value)}
-              placeholder="Age"
+              placeholder="Blood Pressure Systolic"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="age"
+              className="block text-gray-700 text-md font-semibold mb-2"
+              htmlFor="Blood Pressure Diastolic"
             >
               Blood Pressure Diastolic
             </label>
@@ -183,7 +170,7 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
 
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 text-md font-semibold mb-2"
               htmlFor="age"
             >
               Blood Sugar Value
@@ -199,7 +186,7 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 text-md font-semibold mb-2"
               htmlFor="age"
             >
               Blood Sugar Value
@@ -213,18 +200,16 @@ const FormModal = ({ isOpen, closeModal, updateInfo }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
-          {/* Add similar inputs for height, weight, bloodGroup, temperature, bloodPressureSystolic, bloodPressureDiastolic, bloodSugarValue, and bloodSugarUnit */}
-
-          <div className="flex items-center justify-between">
+          <div className="w-full flex items-center justify-between col-span-2">
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-teal-500 hover:bg-teal-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Update Info
             </button>
             <button
               onClick={closeModal}
-              className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+              className="inline-block align-baseline font-semibold text-md text-red-400 hover:text-red-700"
             >
               Cancel
             </button>
