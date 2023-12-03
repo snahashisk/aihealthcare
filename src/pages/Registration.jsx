@@ -1,24 +1,57 @@
-import React from "react";
-import bgimage from "../img/doc-3.png";
+import React, { useState } from "react";
 import {
   AiFillFacebook,
   AiOutlineGoogle,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import bgimage from "../img/doc-3.png";
 import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleLogin = () => {
     navigate("/login");
   };
-  const errorMessage = false;
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (password !== confirmPassword) {
+      setErrorMessage("Passwords do not match");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:8000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        throw new Error(responseData.error || "Registration failed");
+      }
+
+      navigate("/login");
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
+  };
+
   return (
     <div className="w-screen h-screen overflow-hidden flex flex-row-reverse">
       <div className="relative w-1/2 h-full overflow-hidden bg-gradient-to-br from-purple-600 to-teal-400 via-blue-500 flex flex-col justify-center items-center text-white">
         <img src={bgimage} className="h-full w-full" alt="background" />
       </div>
-      <form className="w-1/2 h-full py-16 px-40">
+      <form className="w-1/2 h-full py-16 px-40" onSubmit={handleSubmit}>
         <h1 className="text-2xl font-bold mb-8 text-teal-700">
           <span className="text-yellow-600">AI </span>HEALTHCARE
         </h1>
@@ -40,15 +73,7 @@ const Registration = () => {
             <p>Twitter</p>
           </div>
         </div>
-        <p className="text-gray-500 text-center flex items-center">
-          <span className="inline-block w-1/3 h-0.5 bg-gray-300 my-4"></span>
-          <span
-            className={`w-2/5 text-md ${errorMessage ? "text-red-500" : ""}`}
-          >
-            {errorMessage ? errorMessage : "or register with email"}
-          </span>
-          <span className="inline-block w-1/3 h-0.5 bg-gray-300 my-4"></span>
-        </p>
+
         <div className="flex flex-col pt-4 pb-4">
           <label htmlFor="email" className="text-gray-700 font-semibold pb-2">
             Email address
@@ -57,6 +82,8 @@ const Registration = () => {
             id="email"
             name="email"
             type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-blue-500"
             placeholder="Enter your email"
           />
@@ -73,6 +100,8 @@ const Registration = () => {
             id="password"
             name="password"
             type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-blue-500"
             placeholder="Enter your password"
           />
@@ -89,10 +118,14 @@ const Registration = () => {
             id="confirmPassword"
             name="confirmPassword"
             type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-blue-500"
             placeholder="Confirm your password"
           />
         </div>
+
+        {errorMessage && <p className="text-red-500">{errorMessage}</p>}
 
         <div className="flex justify-between items-center mt-4">
           <label className="flex items-center">
@@ -105,17 +138,17 @@ const Registration = () => {
             </span>
           </label>
         </div>
+
         <button
           type="submit"
           className="mt-8 mb-6 bg-teal-400 text-white font-medium w-full py-3 rounded-md"
-          onClick={handleLogin}
         >
           Register
         </button>
+
         <p className="text-center">
           Already have an account?{" "}
           <button
-            to="/"
             className="text-teal-700 cursor-pointer"
             onClick={handleLogin}
           >

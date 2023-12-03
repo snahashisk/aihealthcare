@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useUserContext } from "../contexts/UserContext";
 import {
   faHouse,
   faHeart,
@@ -20,13 +21,14 @@ import FormModal from "../components/FormModal";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const { user, setUser } = useUserContext();
   const navigate = useNavigate();
   const handleLogout = () => {
+    localStorage.removeItem("user");
     navigate("/");
   };
   const [selectedItem, setSelectedItem] = useState("Dashboard");
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const handleClick = (item) => {
     setSelectedItem(item);
   };
@@ -40,22 +42,73 @@ const Dashboard = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
   const [userInfo, setUserInfo] = useState({
-    name: "Snahashis Kanrar",
-    age: 22,
-    height: 180,
-    weight: 60,
-    bloodGroup: "B+",
-    temperature: "36.6",
-    bloodPressure: { systolic: 120, diastolic: 80 },
-    bloodSugar: { value: 120, unit: 60 },
+    name: "",
+    age: "",
+    height: "",
+    weight: "",
+    bloodGroup: "",
+    temperature: "",
+    bloodPressure: { systolic: "", diastolic: "" },
+    bloodSugar: { value: "", unit: "" },
   });
-
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
 
-  const updateUserInfo = (newInfo) => {
-    setUserInfo({ ...userInfo, ...newInfo });
+  useEffect(() => {
+    const loadUser = () => {
+      const storedUser = localStorage.getItem("user");
+      return storedUser ? JSON.parse(storedUser) : null;
+    };
+
+    const currentUser = user || loadUser();
+    if (!currentUser || !currentUser.userId) {
+      navigate("/login");
+      return;
+    }
+
+    fetchUserData(currentUser.userId);
+  }, [user, setUser, navigate]);
+
+  const fetchUserData = async (userId) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8000/getUserData/${userId}`
+      );
+      if (response.headers.get("content-type").includes("application/json")) {
+        const data = await response.json();
+        if (response.ok) {
+          setUserInfo(data);
+        } else {
+          console.error("Error fetching user data:", data.error);
+        }
+      } else {
+        console.error("Received non-JSON response from server");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  // Update user data in the backend and refetch
+  const updateUserInfo = async (newInfo) => {
+    try {
+      const response = await fetch(`http://localhost:8000/updateUserData`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId: user.userId, ...newInfo }),
+      });
+
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to update data");
+      }
+
+      fetchUserData(user.userId);
+    } catch (error) {
+      console.error("Error updating user data:", error);
+    }
   };
 
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AiFillFacebook,
   AiOutlineGoogle,
@@ -6,17 +6,42 @@ import {
 } from "react-icons/ai";
 import bgimage from "../img/doc-2.png";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../contexts/UserContext";
 
 const Login = () => {
   const navigate = useNavigate();
-  const handleLogin = () => {
-    navigate("/dashboard");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const { setUser } = useUserContext();
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch("http://localhost:8000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Login failed");
+      }
+
+      const userData = await response.json();
+      localStorage.setItem("user", JSON.stringify({ userId: userData.userId }));
+      setUser({ userId: userData.userId });
+      navigate("/dashboard");
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
   };
 
   const handleRegistration = () => {
     navigate("/registration");
   };
-  const errorMessage = false;
   return (
     <div className="w-screen h-screen overflow-hidden flex">
       <div className="w-1/2 h-full py-16 px-40">
@@ -52,20 +77,20 @@ const Login = () => {
           </span>{" "}
           <span className="inline-block w-1/3 h-0.5 bg-gray-300 my-4"></span>
         </p>
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="flex flex-col pt-4 pb-4">
             <label htmlFor="email" className="text-gray-700 font-semibold pb-2">
               Email address
             </label>
             <input
               id="email"
-              name="email"
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-blue-500"
               placeholder="Enter your email"
             />
           </div>
-
           <div className="flex flex-col py-2">
             <label
               htmlFor="password"
@@ -75,30 +100,17 @@ const Login = () => {
             </label>
             <input
               id="password"
-              name="password"
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-blue-500"
               placeholder="Enter your password"
             />
           </div>
-
-          <div className="flex justify-between items-center mt-4">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="form-checkbox text-blue-500 h-4 w-4"
-              />
-              <span className="ml-2 text-gray-700 font-semibold">
-                Remember Me
-              </span>
-            </label>
-            <a href="/error" class="text-teal-600 font-medium">
-              Forgot Password?
-            </a>
-          </div>
+          {errorMessage && <p className="text-red-500">{errorMessage}</p>}
           <button
+            type="submit"
             className="mt-8 mb-6 bg-teal-400 text-white font-medium w-full py-3 rounded-md"
-            onClick={handleLogin}
           >
             Login
           </button>
