@@ -22,9 +22,10 @@ const Homepage = () => {
             WE PROVIDE BEST HEALTHCARE
           </h1>
           <p className="w-2/5 mt-10 text-white text-base mb-10">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            ullam quis accusantium itaque dolorem fuga perferendis eaque aperiam
-            neque a? At sint similique eos sapiente optio modi cum ad delectus.
+            Welcome to our AI-powered healthcare platform, where cutting-edge
+            technology meets compassionate care. Explore a world of personalized
+            health solutions designed to enhance your well-being. Your journey
+            to optimal health begins here.
           </p>
           <button
             className="px-8 py-2 bg-white rounded-md text-teal-600 text-lg"

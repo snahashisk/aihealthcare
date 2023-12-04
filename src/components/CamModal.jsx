@@ -1,19 +1,51 @@
 import React, { useState, useEffect, useRef } from "react";
 import Webcam from "react-webcam";
+import * as tmImage from "@teachablemachine/image";
+
+const URL = "https://teachablemachine.withgoogle.com/models/YVPRgB7FW/";
 
 const CamModal = ({ isOpen, closeModal }) => {
   const webcamRef = useRef(null);
   const [imageSrc, setImageSrc] = useState(null);
+  const [prediction, setPrediction] = useState(null);
+  const [model, setModel] = useState(null);
 
   const videoConstraints = {
     facingMode: "user",
   };
 
   useEffect(() => {
-    if (!isOpen) {
-      setImageSrc(null); // Reset the image source when the modal is closed
+    if (isOpen) {
+      loadModel();
+    } else {
+      setImageSrc(null);
+      setPrediction(null);
     }
   }, [isOpen]);
+
+  const loadModel = async () => {
+    const modelURL = URL + "model.json";
+    const metadataURL = URL + "metadata.json";
+    const tmModel = await tmImage.load(modelURL, metadataURL);
+    setModel(tmModel);
+  };
+
+  const predictImage = async () => {
+    if (!model || !imageSrc) {
+      console.log("No model or image to predict");
+      return;
+    }
+
+    const img = new Image();
+    img.src = imageSrc;
+    img.onload = async () => {
+      const predictions = await model.predict(img);
+      const highestPrediction = predictions.reduce((prev, current) => {
+        return prev.probability > current.probability ? prev : current;
+      });
+      setPrediction(highestPrediction.className);
+    };
+  };
 
   const capture = React.useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
@@ -36,8 +68,8 @@ const CamModal = ({ isOpen, closeModal }) => {
       } transition-opacity duration-300 ease-in-out z-50`}
     >
       <div className="absolute inset-0 bg-black opacity-40"></div>
-      <div className="relative bg-white p-8 rounded-lg shadow-lg z-50 w-1/2 h-2/3">
-        <h2 className="text-xl font-semibold mb-4">Webcam Feed</h2>
+      <div className="relative bg-white p-8 rounded-lg shadow-lg z-50 w-2/5 h-2/3">
+        <h2 className="text-xl font-semibold mb-4">Capture or Upload Image</h2>
 
         {isOpen && !imageSrc && (
           <div className="w-full h-2/3 border border-gray-300 rounded-md">
@@ -59,13 +91,13 @@ const CamModal = ({ isOpen, closeModal }) => {
           />
         )}
 
-        <div className="flex justify-around items-center mt-4">
+        <div className="flex justify-around items-center mt-4 gap-4">
           {!imageSrc && (
             <button
               onClick={capture}
-              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none"
+              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none text-sm"
             >
-              Capture Image
+              Capture
             </button>
           )}
 
@@ -77,6 +109,13 @@ const CamModal = ({ isOpen, closeModal }) => {
           />
 
           <button
+            onClick={predictImage}
+            className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none"
+          >
+            Predict
+          </button>
+
+          <button
             onClick={() => {
               closeModal();
             }}
@@ -85,9 +124,14 @@ const CamModal = ({ isOpen, closeModal }) => {
             Close
           </button>
         </div>
+
+        {prediction && (
+          <div className="mt-4">
+            <p>Prediction: {prediction}</p>
+          </div>
+        )}
       </div>
     </div>
   );
 };
-
 export default CamModal;

@@ -117,6 +117,7 @@ const Dashboard = () => {
         isOpen={isFormModalOpen}
         closeModal={() => setIsFormModalOpen(false)}
         updateInfo={updateUserInfo}
+        userData={userInfo}
       />
       <div className="w-2/12 h-full p-8">
         <h2 className="text-xl font-bold text-teal-600">

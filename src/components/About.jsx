@@ -17,10 +17,10 @@ const About = () => {
           Our Best Features
         </h2>
         <p className="mt-6 text-md">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, rem.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit, perferendis! Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. Sequi, quis.
+          AI in healthcare has several noteworthy features. It excels in
+          analyzing large datasets quickly, aiding in diagnostics, personalizing
+          treatment plans, and streamlining administrative tasks, ultimately
+          enhancing efficiency and improving patient outcomes.
         </p>
       </div>
       <div className="flex mt-8 gap-4">
@@ -91,11 +91,11 @@ const About = () => {
         <div className="p-10 w-1/2 flex flex-col gap-4 items-start">
           <h3 className="text-2xl font-bold">ABOUT US</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-            iusto rerum itaque ab a ea alias obcaecati mollitia et voluptatum.
-            Iusto obcaecati nesciunt eius magnam consectetur temporibus illum.
-            Recusandae atque quibusdam animi eveniet officiis odio modi
-            provident ut non dolor.
+            Welcome to our AI Healthcare Hub, where cutting-edge technology
+            meets compassionate care. We harness the power of artificial
+            intelligence to revolutionize healthcare, ensuring personalized
+            solutions and improved patient outcomes. Join us on the forefront of
+            innovation, where your well-being is our priority.
           </p>
           <button className="px-8 py-2 bg-teal-400 rounded-md text-white text-lg">
             Know More
