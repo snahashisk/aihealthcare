@@ -9,10 +9,10 @@ const Footer = () => {
             Our Mission & Vision
           </h2>
           <p className="mt-6 text-md">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, rem.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit, perferendis! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Sequi, quis.
+            Our app aims to revolutionize healthcare by leveraging AI for
+            disease prediction through image analysis, while offering users
+            seamless tracking of vital health metrics like blood pressure and
+            sugar levels
           </p>
         </div>
         <div className="mt-8 flex justify-around">
@@ -21,25 +21,27 @@ const Footer = () => {
               Our Mission
             </h3>
             <ul className="mt-4 flex flex-col gap-2">
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
+              <li>Change healthcare using AI</li>
+              <li>Make healthcare personal, easy, and effective globally</li>
+              <li>Improve diagnosis, treatment, and global health.</li>
+              <li>To make the healthcare available for everyone</li>
+              <li>Enable easy tracking of vital health metrics.</li>
+              <li>
+                Improve healthcare accessibility through digital solutions.
+              </li>
+              <li>Foster proactive health management and awareness.</li>
             </ul>
           </div>
           <div className="text-center">
             <h3 className="text-3xl font-semibold text-teal-700">Our Vision</h3>
             <ul className="mt-4 flex flex-col gap-2">
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
-              <li>Lorem ipsum dolor sit amet consectetur aut amet</li>
+              <li>Create AI solutions for better healthcare.</li>
+              <li>Help healthcare pros and improve processes.</li>
+              <li>Make patient care better through constant innovation.</li>
+              <li>Tackle healthcare issues and bridge gaps</li>
+              <li>Ensure everyone gets quality, affordable healthcare.</li>
+              <li>Transform personal health management globally</li>
+              <li>Empower users with comprehensive health insights.</li>
             </ul>
           </div>
         </div>

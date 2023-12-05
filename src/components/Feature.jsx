@@ -19,10 +19,9 @@ const Feature = () => {
           Our Provided Support
         </h2>
         <p className="mt-6 text-md">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, rem.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit, perferendis! Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. Sequi, quis.
+          Our app expertly predicts diseases affecting the scalp, nails, skin,
+          eyes, and teeth, utilizing advanced AI algorithms to provide accurate,
+          early diagnosis for effective health management.
         </p>
       </div>
       <div className="mt-16 flex gap-6 justify-center">

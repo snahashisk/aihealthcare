@@ -31,8 +31,8 @@ const About = () => {
           />
           <h3 className="text-lg font-bold mt-4">DIAGNOSE</h3>
           <p className="text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minima,
-            labore quidem debitis ab eveniet.
+            Get the fastest diagnosis of you health issue by providing us image
+            input from your camera.
           </p>
         </div>
 
@@ -43,8 +43,8 @@ const About = () => {
           />
           <h3 className="text-lg font-bold mt-4">INSTANT RESULT</h3>
           <p className="text-sm">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde optio
-            nemo distinctio earum nam cumque.
+            An AI healthcare website with instant results could provide rapid
+            and accurate information.
           </p>
         </div>
 
@@ -55,8 +55,8 @@ const About = () => {
           />
           <h3 className="text-lg font-bold mt-4">EXPLAINABLE AI</h3>
           <p className="text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-            molestias ad ex aspernatur atque fugiat.
+            The goal of such a website is to empower users with valuable health
+            information.
           </p>
         </div>
 
@@ -67,8 +67,8 @@ const About = () => {
           />
           <h3 className="text-lg font-bold mt-4">PREDICTIVE ANALYSIS</h3>
           <p className="text-sm">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic
-            quisquam doloremque unde atque, ipsum error?
+            A user inputs their health data, the AI system analyses this
+            information to predict potential future health outcomes.
           </p>
         </div>
 
@@ -79,8 +79,8 @@ const About = () => {
           />
           <h3 className="text-lg font-bold mt-4">TELEMEDICINE</h3>
           <p className="text-sm">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto
-            minus nihil deserunt earum fugiat laudantium.
+            Potential heathcare center details will be provided to help you to
+            achieve cure.
           </p>
         </div>
       </div>
