@@ -12,7 +12,7 @@ export const UserProvider = ({ children }) => {
   const updateUser = async (userId, userData) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/updateUserData/${userId}`,
+        `https://backend-ywtx.onrender.com/updateUserData/${userId}`,
         {
           method: "PUT", // Use PUT for updating
           headers: {

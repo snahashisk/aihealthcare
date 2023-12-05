@@ -127,7 +127,12 @@ const CamModal = ({ isOpen, closeModal }) => {
 
         {prediction && (
           <div className="mt-4">
-            <p>Prediction: {prediction}</p>
+            <p className="text-lg">
+              You are trying to diagnose{" "}
+              <span className="font-semibold text-teal-600">
+                {prediction} Related Diseases
+              </span>
+            </p>
           </div>
         )}
       </div>

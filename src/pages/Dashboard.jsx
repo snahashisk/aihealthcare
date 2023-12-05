@@ -72,7 +72,7 @@ const Dashboard = () => {
   const fetchUserData = async (userId) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/getUserData/${userId}`
+        `https://backend-ywtx.onrender.com/getUserData/${userId}`
       );
       if (response.headers.get("content-type").includes("application/json")) {
         const data = await response.json();
@@ -92,13 +92,16 @@ const Dashboard = () => {
   // Update user data in the backend and refetch
   const updateUserInfo = async (newInfo) => {
     try {
-      const response = await fetch(`http://localhost:8000/updateUserData`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ userId: user.userId, ...newInfo }),
-      });
+      const response = await fetch(
+        `https://backend-ywtx.onrender.com/updateUserData`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ userId: user.userId, ...newInfo }),
+        }
+      );
 
       const result = await response.json();
       if (!response.ok) {
@@ -229,8 +232,8 @@ const Dashboard = () => {
               DISEASE PREDICTION
             </h3>
             <p className="text-sm text-gray-500 pt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-              minus tenetur vel ea possimus.
+              Launch the app and upload a clear well lit image of the effected
+              area for better result.
             </p>
             <div className="flex flex-wrap gap-2 pt-2">
               <p className="px-2 py-1 bg-gradient-to-r from-sky-400 to-green-500 rounded-lg text-white shadow-md">
