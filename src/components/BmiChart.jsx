@@ -39,7 +39,9 @@ const needle = (value, data, cx, cy, iR, oR, color) => {
 
 class BmiChart extends PureComponent {
   render() {
-    const { bmiValue } = this.props;
+    const { height, weight } = this.props;
+    const heightMeter = height / 1000;
+    const bmiValue = weight / heightMeter;
     const data = [
       { name: "Underweight", value: 18.5, color: "#fbbf24" },
       { name: "Normal Weight", value: 24.9, color: "#4ade80" },

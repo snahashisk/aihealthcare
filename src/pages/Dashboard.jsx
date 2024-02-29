@@ -12,7 +12,7 @@ import {
   faMars,
 } from "@fortawesome/free-solid-svg-icons";
 import BmiChart from "../components/BmiChart";
-import CamModal from "../components/CamModal";
+import Akinator from "../components/Akinator";
 import SimpleInfo from "../components/SimpleInfo";
 import ComplexInfo from "../components/ComplexInfo";
 import Marker from "../components/Marker";
@@ -27,19 +27,25 @@ const Dashboard = () => {
     localStorage.removeItem("user");
     navigate("/");
   };
-  const [selectedItem, setSelectedItem] = useState("Dashboard");
+
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [answers, setAnswers] = useState({});
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [finalResult, setFinalResult] = useState("");
+
+  const [selectedItem, setSelectedItem] = useState("Dashboard");
   const handleClick = (item) => {
     setSelectedItem(item);
   };
-
-  const bmiValue = 20;
 
   const openModal = () => {
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
+    setAnswers({});
+    setCurrentQuestion(0);
+    setFinalResult("");
     setIsModalOpen(false);
   };
   const [userInfo, setUserInfo] = useState({
@@ -89,7 +95,7 @@ const Dashboard = () => {
     }
   };
 
-  // Update user data in the backend and refetch
+  // Update user data in the backend and refetc
   const updateUserInfo = async (newInfo) => {
     try {
       const response = await fetch(
@@ -224,7 +230,7 @@ const Dashboard = () => {
               ≤ 24.9), overweight (25.0 ≤ BMI ≤ 29.9), or obese (BMI ≥ 30.0).
             </p>
             <div className="flex items-center justify-center h-1/2">
-              <BmiChart bmiValue={bmiValue} />
+              <BmiChart height={userInfo.height} weight={userInfo.weight} />
             </div>
           </div>
           <div className="w-1/2 flex flex-col gap-2">
@@ -263,7 +269,16 @@ const Dashboard = () => {
               Launch App
             </button>
           </div>
-          <CamModal isOpen={isModalOpen} closeModal={closeModal} />
+          <Akinator
+            isOpen={isModalOpen}
+            closeModal={closeModal}
+            answers={answers}
+            setAnswers={setAnswers}
+            currentQuestion={currentQuestion}
+            setCurrentQuestion={setCurrentQuestion}
+            finalResult={finalResult}
+            setFinalResult={setFinalResult}
+          />
         </div>
       </div>
       <div className="w-4/12 h-full bg-blue-200 relative">

@@ -6,7 +6,7 @@ const ComplexInfo = ({ temperature, bloodPressure, bloodSugar }) => {
       <div className="w-1/3 bg-gradient-to-br from-teal-400 to-sky-500 rounded-2xl p-4 text-lg flex justify-between flex-col shadow-lg">
         <div>
           <p className="text-2xl">Temperature</p>
-          <p className="text-sm">degree Celsius</p>
+          <p className="text-sm">degree Fahrenheit</p>
         </div>
         <div className="text-6xl">{temperature}</div>
       </div>
