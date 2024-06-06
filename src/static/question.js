@@ -1,6 +1,6 @@
 const questions = [
   {
-    text: "Choose an option: Level 1 : 0",
+    text: "Choose an option",
     options: [
       { text: "I have Skin related issue.", nextQuestion: 88 },
       { text: "I have Teeth related issue.", nextQuestion: 2 },
@@ -10,7 +10,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option : 1",
+    text: "Choose an option",
     options: [
       { text: "Sub-option A", nextQuestion: 2 },
       { text: "Sub-option B", nextQuestion: 3 },
@@ -19,37 +19,37 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 1 : 2",
+    text: "Choose an option",
     options: [
       { text: "I have pain and discomfort in teeth.", nextQuestion: 3 },
-      { text: "I have issue about oral hygine.", nextQuestion: 6 },
-      { text: "I have issue about my tooth appearence.", nextQuestion: 7 },
+      { text: "I have issue about oral hygiene.", nextQuestion: 6 },
+      { text: "I have issue about my tooth appearance.", nextQuestion: 7 },
       { text: "I have gum related issue.", nextQuestion: 8 },
     ],
   },
   {
-    text: "Choose an option: Level 2 :: 3",
+    text: "Choose an option",
     options: [
       { text: "I have only Pain in my teeth", nextQuestion: 4 },
       { text: "I have Sensitive teeth.", nextQuestion: 5 },
     ],
   },
   {
-    text: "Choose an option: Level 3 :: 4",
+    text: "Choose an option",
     options: [
       { text: "I have sharp Pain in my teeth", nextQuestion: 9 },
       { text: "I have throbbing Pain in my teeth.", nextQuestion: 10 },
     ],
   },
   {
-    text: "Choose an option: Level 3 ::: 5",
+    text: "Choose an option",
     options: [
       { text: "I have issue from eating hot/cold food.", nextQuestion: 11 },
       { text: "I have issue from eating from sweet food.", nextQuestion: 12 },
     ],
   },
   {
-    text: "Choose an option: Level 2 : 6",
+    text: "Choose an option",
     options: [
       { text: "I have bad breath.", nextQuestion: 13 },
       { text: "I have dry mouth.", nextQuestion: 14 },
@@ -57,14 +57,14 @@ const questions = [
   },
 
   {
-    text: "Choose an option: Level 2 : 7 ",
+    text: "Choose an option",
     options: [
       { text: "I am facing discoloration of my teeth.", nextQuestion: 15 },
       { text: "I have cracks/chips on my teeth.", nextQuestion: 16 },
     ],
   },
   {
-    text: "Choose an option: Level 2 : 8",
+    text: "Choose an option",
     options: [
       { text: "I have bleeding gums.", nextQuestion: 18 },
       { text: "I have swollen gums.", nextQuestion: 19 },
@@ -72,7 +72,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 9",
+    text: "Choose an option",
     options: [
       {
         text: "I have sharp pain while eating sweet food.",
@@ -105,7 +105,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 10",
+    text: "Choose an option",
     options: [
       {
         text: "I have grinding and clenching in my teeth.",
@@ -122,32 +122,32 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 :11",
+    text: "Choose an option",
     options: [
       {
         text: "I have pain triggered by hot/cold foods.",
         diseaseName: "Dentim Hypersensitivity",
       },
       {
-        text: "I have sweeling in the gums and sensitivity to hot/cold food.",
+        text: "I have sweling in the gums and sensitivity to hot/cold food.",
         diseaseName: "Tooth Fracture",
       },
       {
-        text: "I have translucensy in teeth and sensitivity to hot/cold food.",
+        text: "I have translucency in teeth and sensitivity to hot/cold food.",
         diseaseName: "Erosion",
       },
       {
-        text: "I have sensitivity to hot or cold foods/beverages and visible holes or pits in the teeth ",
+        text: "I have sensitivity to hot or cold foods/beverages and visible holes or pits in the teeth.",
         diseaseName: "Lingual Caries",
       },
       {
-        text: "I have severe toothach and sensitivity to hot and cold food.",
+        text: "I have severe toothache and sensitivity to hot and cold food.",
         diseaseName: "Periapical abscess",
       },
     ],
   },
   {
-    text: "Choose an option: Level 4 : 12",
+    text: "Choose an option",
     options: [
       {
         text: "I have bleeding gums and bad breath.",
@@ -164,7 +164,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 13",
+    text: "Choose an option",
     options: [
       {
         text: "I have persistent bad breath, plaque buildup, swollen gum.",
@@ -195,13 +195,13 @@ const questions = [
         diseaseName: "Macroglossia",
       },
       {
-        text: "I have gum recession,Persistent bad breath.",
+        text: "I have gum recession, persistent bad breath.",
         diseaseName: "Periodontitis",
       },
     ],
   },
   {
-    text: "Choose an option: Level 4 : 14",
+    text: "Choose an option",
     options: [
       {
         text: "I have white patches in the mouth, soreness, and discomfort.",
@@ -218,7 +218,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 15",
+    text: "Choose an option",
     options: [
       {
         text: "I have white patches in the mouth, soreness, and discomfort.",
@@ -229,13 +229,13 @@ const questions = [
         diseaseName: "Sjogren_s Syndrome",
       },
       {
-        text: "I have persistent dryness or feeling of stickiness in the mouth, difficulty chewing, swallowing",
+        text: "I have persistent dryness or feeling of stickiness in the mouth, difficulty chewing, swallowing.",
         diseaseName: "Xerostomia",
       },
     ],
   },
   {
-    text: "Choose an option: Level 4 : 16",
+    text: "Choose an option",
     options: [
       {
         text: "My teeths are turning yellow.",
@@ -264,10 +264,10 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 17",
+    text: "Choose an option",
     options: [
       {
-        text: "I have missing teeth,Gaps between teeth,Misalignment of remaining teeth .",
+        text: "I have missing teeth,Gaps between teeth,Misalignment of remaining teeth.",
         diseaseName: "Hypodontia",
       },
       {
@@ -285,7 +285,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 18 ",
+    text: "Choose an option",
     options: [
       {
         text: "I have bad breath, gum inflammation and bleeding,Receding gums or pockets forming between teeth and gums.",
@@ -298,7 +298,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 19",
+    text: "Choose an option",
     options: [
       {
         text: "I have severe gum pain, bleeding gums, formation of ulcers on the gums.",
@@ -311,7 +311,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 20",
+    text: "Choose an option",
     options: [
       {
         text: "I have facial swelling, ulceration of the gums, foul-smelling.",
@@ -324,7 +324,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 21",
+    text: "Choose an option",
     options: [
       { text: "I have hair loss related issue.", nextQuestion: 22 },
       { text: "I have pain in scalp.", nextQuestion: 28 },
@@ -332,7 +332,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 22",
+    text: "Choose an option",
     options: [
       { text: "I have flaky itchy scalp.", nextQuestion: 23 },
       { text: "I have scaly patches.", nextQuestion: 24 },
@@ -342,7 +342,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 23",
+    text: "Choose an option",
     options: [
       {
         text: "I have skin flakes on scalp, eye brow, shoulder.",
@@ -367,7 +367,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 24",
+    text: "Choose an option",
     options: [
       {
         text: "I have persistent red patches covered with silvery scales.",
@@ -384,7 +384,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 25",
+    text: "Choose an option",
     options: [
       {
         text: "I have circular, scaly patches on the scalp.",
@@ -417,7 +417,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 26",
+    text: "Choose an option",
     options: [
       {
         text: "I have complete loss of body hair, including scalp, eyebrows, and eyelashes.",
@@ -454,7 +454,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 27",
+    text: "Choose an option",
     options: [
       {
         text: "I have red bumps, itching, and hair loss.",
@@ -483,7 +483,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 28",
+    text: "Choose an option",
     options: [
       { text: "I have color changing or staining issues.", nextQuestion: 29 },
       {
@@ -495,7 +495,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 29",
+    text: "Choose an option",
     options: [
       {
         text: "I have irregular moles, changes in color, itching, bleeding:.",
@@ -512,7 +512,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 30",
+    text: "Choose an option",
     options: [
       {
         text: "I have facial rash, itching, pustules, redness.",
@@ -549,7 +549,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 31",
+    text: "Choose an option",
     options: [
       {
         text: "I have itchy scalp, painful lumps, yellow discharge.",
@@ -582,7 +582,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 32",
+    text: "Choose an option",
     options: [
       {
         text: "I have itchy scalp with small, tiny white eggs attached to hair shafts.",
@@ -595,14 +595,14 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 33",
+    text: "Choose an option",
     options: [
-      { text: "I have itching and burning sensation..", nextQuestion: 34 },
+      { text: "I have itching and burning sensation.", nextQuestion: 34 },
       { text: "I have dry scalp and lack of moisture.", nextQuestion: 35 },
     ],
   },
   {
-    text: "Choose an option: Level 4 : 34",
+    text: "Choose an option",
     options: [
       {
         text: "I have hair loss, itching, and raised plaques on the scalp.",
@@ -623,7 +623,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 4 : 35",
+    text: "Choose an option",
     options: [
       {
         text: "I have itchy, inflamed scalp with red patches and flakes.",
@@ -636,18 +636,18 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 36",
+    text: "Choose an option",
     options: [
       { text: "I have vision related issue.", nextQuestion: 37 },
       { text: "I have discomfort or pain in eye.", nextQuestion: 42 },
-      { text: "I have changes in appearence in eye.", nextQuestion: 47 },
+      { text: "I have changes in appearance in eye.", nextQuestion: 47 },
       { text: "I have inflammation in eye.", nextQuestion: 52 },
       { text: "I have functional issue in eye.", nextQuestion: 57 },
       { text: "I have abnormal growth in eye.", nextQuestion: 63 },
     ],
   },
   {
-    text: "Choose an option: Level 2 : 37",
+    text: "Choose an option",
     options: [
       { text: "I have difficulty in focusing.", nextQuestion: 38 },
       { text: "I have sudden changes in vision.", nextQuestion: 39 },
@@ -656,7 +656,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 38",
+    text: "Choose an option",
     options: [
       {
         text: "I have blurred vision, eye strain, headaches, difficulty focusing on close objects.",
@@ -671,7 +671,7 @@ const questions = [
         diseaseName: "Presbyopia",
       },
       {
-        text: "I have blurry vision, eyestrain, headaches, distorted images, difficulty driving or reading, light sensitivity.",
+        text: "I have blurry vision, eyestrain, headaches, distorted images, light sensitivity.",
         diseaseName: "Astigmatism",
       },
       {
@@ -689,7 +689,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 39",
+    text: "Choose an option",
     options: [
       {
         text: "I have Reduced vision, poor depth perception, squinting, headaches, eye strain.",
@@ -708,17 +708,17 @@ const questions = [
         diseaseName: "Diabetic Macular Edema",
       },
       {
-        text: "I have sudden Vision changes, flashes of light, sudden floaters, curtain-like shadow, reduced peripheral vision.",
+        text: "I have sudden Vision changes, flashes of light, curtain-like shadow, reduced peripheral vision.",
         diseaseName: "Rhegmatogenous Retinal Detachment",
       },
       {
-        text: "I have sudden Vision Changes, eye pain, color desaturation, impaired vision, flashing lights, blind spot..",
+        text: "I have sudden Vision Changes, eye pain, color desaturation, impaired vision, flashing lights, blind spot.",
         diseaseName: "Optic Neuritis",
       },
     ],
   },
   {
-    text: "Choose an option: 40",
+    text: "Choose an option",
     options: [
       {
         text: "I have vision loss, headaches, confusion, dizziness, fatigue, nausea, weakness.",
@@ -739,24 +739,24 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 41",
+    text: "Choose an option",
     options: [
       {
-        text: "I have complete Vision Loss, eye pain, redness, swelling, blurred vision, discharge.",
+        text: "I have eye pain, redness, swelling, blurred vision, discharge.",
         diseaseName: "Ocular Terbinafine",
       },
       {
-        text: "I have complete Vision changes, eye pain, redness, blurred vision, swelling, sensitivity.",
+        text: "I have eye pain, redness, blurred vision, swelling, sensitivity.",
         diseaseName: "Ocular Imatinib",
       },
       {
-        text: "I have Complete Vision loss, blurred vision, distorted images, peripheral vision problems.",
+        text: "I have blurred vision, distorted images, peripheral vision problems.",
         diseaseName: "Retinoschisis",
       },
     ],
   },
   {
-    text: "Choose an option: Level 2 : 42",
+    text: "Choose an option",
     options: [
       { text: "I have sharp pain in eye.", nextQuestion: 43 },
       { text: "I have throbbing pain in eye.", nextQuestion: 44 },
@@ -765,7 +765,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 43",
+    text: "Choose an option",
     options: [
       {
         text: "I have Eye pain, blurred vision, headaches, nausea, halos, redness, decreased vision clarity.",
@@ -782,7 +782,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 44",
+    text: "Choose an option",
     options: [
       {
         text: "I have throbbing Pain, Burning sensation, redness, blurred vision, sensitivity to light, gritty feeling.",
@@ -795,10 +795,10 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 45",
+    text: "Choose an option",
     options: [
       {
-        text: "I have eye pain, redness, watering, sensitivity to light, blurred hion, foreign body sensation.",
+        text: "I have eye pain, redness, watering, sensitivity to light, blurred vision, foreign body sensation.",
         diseaseName: "Corneal Abrasion",
       },
       {
@@ -808,7 +808,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 46",
+    text: "Choose an option",
     options: [
       {
         text: "I have stinging or burning sensation, excessive tearing, redness, blurry vision, discomfort.",
@@ -825,7 +825,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 47",
+    text: "Choose an option",
     options: [
       { text: "I have bloodshed eyes.", nextQuestion: 48 },
       { text: "I have eyelid swelling.", nextQuestion: 49 },
@@ -834,7 +834,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Bloodshed eyes 48",
+    text: "Choose an option",
     options: [
       {
         text: "I have blood in eye, Vision changes, eye pain, swelling, bruising. tearing.",
@@ -855,7 +855,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Eyelid swelling 49",
+    text: "Choose an option",
     options: [
       {
         text: "I have eyelid redness & Swelling, itching, burning sensation, crusty eyelashes.",
@@ -880,7 +880,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: bulging eyes 50",
+    text: "Choose an option",
     options: [
       {
         text: "I have bulging eyes, blurred vision, headaches, nausea, vomiting, vision changes.",
@@ -893,7 +893,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: bulging eyes 51",
+    text: "Choose an option",
     options: [
       {
         text: "I have eye pain, redness, blurred vision, discharge, tearing.",
@@ -930,7 +930,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 52",
+    text: "Choose an option",
     options: [
       { text: "I have itching in my eyes.", nextQuestion: 53 },
       { text: "I have discharge from eyes.", nextQuestion: 54 },
@@ -939,7 +939,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 53",
+    text: "Choose an option",
     options: [
       {
         text: "I have eye redness, itchiness, tearing, discharge, gritty feeling, light sensitivity, swollen eyelids.",
@@ -972,7 +972,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 54",
+    text: "Choose an option",
     options: [
       {
         text: "I have eye redness, discharge, itching, tearing, sensitivity to light, blurred vision.",
@@ -985,7 +985,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 55",
+    text: "Choose an option",
     options: [
       {
         text: "I have eye pain, redness, blurred vision, headaches, nasal congestion, fatigue, weight loss.",
@@ -1002,7 +1002,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 56",
+    text: "Choose an option",
     options: [
       {
         text: "I have eye pain, redness, blurred vision, sensitivity to light, inflammation.",
@@ -1027,7 +1027,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 57",
+    text: "Choose an option",
     options: [
       { text: "I have light sensitivity.", nextQuestion: 58 },
       { text: "I have double vision.", nextQuestion: 59 },
@@ -1037,7 +1037,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 58",
+    text: "Choose an option",
     options: [
       {
         text: "I have dry eyes, blurred vision, light sensitivity, eye redness, foreign body sensation.",
@@ -1082,7 +1082,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 59",
+    text: "Choose an option",
     options: [
       {
         text: "I have misaligned eyes, double vision, eye strain, trouble focusing, depth perception issues.",
@@ -1099,7 +1099,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 60",
+    text: "Choose an option",
     options: [
       {
         text: "I have night blindness, tunnel vision, decreased peripheral vision, difficulty with color perception.",
@@ -1112,20 +1112,20 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 61",
+    text: "Choose an option",
     options: [
       {
         text: "I have difficulty distinguishing certain colors, confusion with similar hues, limited color perception.",
         diseaseName: "Color Blindness",
       },
       {
-        text: "I have central vision loss, distorted vision, difficulty reading. colors appear washed out..",
+        text: "I have central vision loss, distorted vision, difficulty reading. colors appear washed out.",
         diseaseName: "Cystoid Macular Edema",
       },
     ],
   },
   {
-    text: "Choose an option: 62",
+    text: "Choose an option",
     options: [
       {
         text: "I have involuntary horizontal eye movements, jerking in the eyes, impaired vision, dizziness.",
@@ -1154,7 +1154,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 63",
+    text: "Choose an option",
     options: [
       { text: "I have bad vision and light sensitivity.", nextQuestion: 64 },
       { text: "I have pain and vision loss.", nextQuestion: 65 },
@@ -1163,10 +1163,10 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 64",
+    text: "Choose an option",
     options: [
       {
-        text: "I have Cloudy vision, difficulty seeing at night, faded colors, increased glare sensitivity..",
+        text: "I have cloudy vision, difficulty seeing at night, faded colors, increased glare sensitivity.",
         diseaseName: "Nuclear Cataracts",
       },
       {
@@ -1174,7 +1174,7 @@ const questions = [
         diseaseName: "Pterygium",
       },
       {
-        text: "I have cloudy vision, difficulty seeing in bright light, glare sensitivity, color changes..",
+        text: "I have cloudy vision, difficulty seeing in bright light, glare sensitivity, color changes.",
         diseaseName: "Cortical Cataract",
       },
       {
@@ -1182,20 +1182,20 @@ const questions = [
         diseaseName: "Posterior Subcapsular Cataract",
       },
       {
-        text: "I have Vision changes, glare, halos, photosensitivity, blurred vision, dry eyes.",
+        text: "I have vision changes, glare, halos, photosensitivity, blurred vision, dry eyes.",
         diseaseName: "Ocular Amiodarone Toxicity",
       },
     ],
   },
   {
-    text: "Choose an option: 65",
+    text: "Choose an option",
     options: [
       {
-        text: "I have Gradual vision loss, tunnel vision, eye pain, halos, optic nerve damage.",
+        text: "I have gradual vision loss, tunnel vision, eye pain, halos, optic nerve damage.",
         diseaseName: "Open-Angle Glaucoma",
       },
       {
-        text: "I have Vision blurring, halos, eye pain, pigment on cornea",
+        text: "I have vision blurring, halos, eye pain, pigment on cornea",
         diseaseName: "Ocular Pigment Dispersion Syndrome",
       },
       {
@@ -1205,7 +1205,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 66",
+    text: "Choose an option",
     options: [
       {
         text: "I have eye discoloration, changes in vision, blurred vision, floaters, eye pain, swelling.",
@@ -1228,21 +1228,21 @@ const questions = [
         diseaseName: "Vitreous Hemorrhage",
       },
       {
-        text: "I have eye pain, vision loss, inflammation, redness, blurred vision, headache, fever, fatigue, weight los.",
+        text: "I have eye pain, vision loss, inflammation, redness, blurred vision, headache, fever, fatigue, weight loss.",
         diseaseName: "Ocular Polyarteritis Nodosa",
       },
       {
-        text: "I have eye pain, vision changes, floaters, redness, inflammation, blurred vision, photophobia, strabismus.",
+        text: "I have eye pain, vision changes, floaters, redness, inflammation, blurred vision, photophobia.",
         diseaseName: "Ocular Toxocariasis",
       },
       {
-        text: "I have eye pain, blurred vision, redness, swelling, floaters, light sensitivity, decreased vision, double vision..",
+        text: "I have eye pain, blurred vision, redness, swelling, floaters, light sensitivity, decreased vision, double vision.",
         diseaseName: "Ocular Lymphoma",
       },
     ],
   },
   {
-    text: "Choose an option: 67",
+    text: "Choose an option",
     options: [
       {
         text: "I have redness, irritation, blurred vision, foreign body sensation, excessive tearing, eye discomfort",
@@ -1261,21 +1261,21 @@ const questions = [
         diseaseName: "Ocular Carcinoid Tumor",
       },
       {
-        text: "I have Abnormal eye growth, vision changes, pain, redness, swelling, disfigurement, blindness risk, lump around eye.",
+        text: "I have abnormal eye growth, vision changes, pain, redness, swelling, disfigurement, blindness risk, lump around eye.",
         diseaseName: "Ocular Teratoma",
       },
       {
-        text: "I have Eye pain, vision changes, bulging, redness, swelling. blurred vision, tearing, discomfort, sensitivity, lumps.",
+        text: "I have eye pain, vision changes, bulging, redness, swelling. blurred vision, tearing, discomfort, sensitivity, lumps.",
         diseaseName: "Ocular Mucoepidermoid Carcinoma",
       },
       {
-        text: "I haveEye redness, blurred vision, floaters, decreased vision, visual disturbances, lumps around the eyes..",
+        text: "I have eye redness, blurred vision, floaters, decreased vision, visual disturbances.",
         diseaseName: "Ocular Capillary Hemangioma",
       },
     ],
   },
   {
-    text: "Choose an option: Level 2 : 68",
+    text: "Choose an option",
     options: [
       { text: "I have changes in nail appearance.", nextQuestion: 69 },
       { text: "I have discomfort or pain in nail.", nextQuestion: 73 },
@@ -1285,7 +1285,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 69",
+    text: "Choose an option",
     options: [
       { text: "I have discoloration in nail.", nextQuestion: 70 },
       { text: "I have texture changes in nail.", nextQuestion: 71 },
@@ -1293,7 +1293,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 70",
+    text: "Choose an option",
     options: [
       {
         text: "I have discoloration of nails (yellow color).",
@@ -1350,7 +1350,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 71",
+    text: "Choose an option",
     options: [
       {
         text: "I have splitting or peeling of the nail plate layers.",
@@ -1377,7 +1377,7 @@ const questions = [
         diseaseName: "Darier Disease",
       },
       {
-        text: "I have Thickening of the nails.",
+        text: "I have thickening of the nails.",
         diseaseName: "Pachyonychia",
       },
       {
@@ -1403,14 +1403,14 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 72",
+    text: "Choose an option",
     options: [
       {
         text: "I have enlargement of the fingertips and nails.",
         diseaseName: "Clubbing",
       },
       {
-        text: "I have spoon-shaped nails,",
+        text: "I have spoon-shaped nails.,",
         diseaseName: "Koilonychia",
       },
       {
@@ -1420,21 +1420,21 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 73",
+    text: "Choose an option",
     options: [
       { text: "I have pain in nail.", nextQuestion: 74 },
       { text: "I have swelling around nail.", nextQuestion: 75 },
     ],
   },
   {
-    text: "Choose an option: 74",
+    text: "Choose an option",
     options: [
       {
-        text: "I have inflammatory reaction of the nail unit due to exposure to allergens",
+        text: "I have inflammatory reaction of the nail unit due to exposure to allergens.",
         diseaseName: "Allergic Contact Dermatitis",
       },
       {
-        text: "I have tumor arising from the glomus body,",
+        text: "I have tumor arising from the glomus body.",
         diseaseName: "Glomus Tumor",
       },
       {
@@ -1444,30 +1444,30 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 75",
+    text: "Choose an option",
     options: [
       {
-        text: "I have inflammatory condition of small blood vessels",
+        text: "I have inflammatory condition of small blood vessels.",
         diseaseName: "Pernio",
       },
       {
-        text: "I have nail changes due to physical trauma, such as crushing or smashing,",
+        text: "I have nail changes due to physical trauma, such as crushing or smashing.",
         diseaseName: "Traumatic Injury",
       },
     ],
   },
   {
-    text: "Choose an option: Level 2 : 76",
+    text: "Choose an option",
     options: [
-      { text: "I have fungual nail infection.", nextQuestion: 77 },
+      { text: "I have fungul nail infection.", nextQuestion: 77 },
       { text: "I have bacterial nail infection.", nextQuestion: 78 },
     ],
   },
   {
-    text: "Choose an option: 77",
+    text: "Choose an option",
     options: [
       {
-        text: "I have infection of the nail, leading to discoloration, thickening, and brittleness",
+        text: "I have infection of the nail, leading to discoloration, thickening, and brittleness.",
         diseaseName: "Onychomycosis",
       },
       {
@@ -1477,7 +1477,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 78",
+    text: "Choose an option",
     options: [
       {
         text: "I have pustules and scaling on my nails.",
@@ -1510,16 +1510,16 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 79",
+    text: "Choose an option",
     options: [
       { text: "I have nail growing issue.", nextQuestion: 80 },
       { text: "I have outgrowth of tissue.", nextQuestion: 81 },
       { text: "I have indentations across the nail.", nextQuestion: 82 },
-      { text: "I have abnormal growth in nail..", nextQuestion: 83 },
+      { text: "I have abnormal growth in nail.", nextQuestion: 83 },
     ],
   },
   {
-    text: "Choose an option: 80",
+    text: "Choose an option",
     options: [
       {
         text: "I have Nail edge grew into surrounding skin, causing pain and inflammation.",
@@ -1532,7 +1532,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 81",
+    text: "Choose an option",
     options: [
       {
         text: "I have overgrowth of tissue on the surface of the nail.",
@@ -1543,24 +1543,24 @@ const questions = [
         diseaseName: "Dorsal Pterygium",
       },
       {
-        text: "I have Inflammatory skin condition affecting the nails.",
+        text: "I have inflammatory skin condition affecting the nails.",
         diseaseName: "Lichen Planus",
       },
     ],
   },
   {
-    text: "Choose an option: 82",
+    text: "Choose an option",
     options: [
       {
         text: "I have transverse depressions or ridges across the nail plate.",
         diseaseName: "Beau's Lines",
       },
       {
-        text: "I have Abnormally large nails.",
+        text: "I have abnormally large nails.",
         diseaseName: "Macronychia",
       },
       {
-        text: "I have Abnormally short nails.",
+        text: "I have abnormally short nails.",
         diseaseName: "Brachyonychia",
       },
       {
@@ -1568,7 +1568,7 @@ const questions = [
         diseaseName: "Shrimp Nai",
       },
       {
-        text: "I have  Absence of nails, either congenital or acquired.",
+        text: "I have absence of nails, either congenital or acquired.",
         diseaseName: "Anonychia",
       },
       {
@@ -1594,10 +1594,10 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 83",
+    text: "Choose an option",
     options: [
       {
-        text: "I have Abnormal alignment of the toenails, often causing pain or discomfort.",
+        text: "I have abnormal alignment of the toenails, often causing pain or discomfort.",
         diseaseName: "Great Toenails",
       },
       {
@@ -1605,25 +1605,25 @@ const questions = [
         diseaseName: "Pyogenic Granuloma",
       },
       {
-        text: "I have  tumor arising from the nail matrix.",
+        text: "I have tumor arising from the nail matrix.",
         diseaseName: "Onychomatricoma",
       },
       {
-        text: "I have  Cyst-like structure in the nail bed.",
+        text: "I have cyst-like structure in the nail bed.",
         diseaseName: "Myxoid Pseudocyst",
       },
       {
-        text: "I have  Cyst-like structure in the nail bed.",
+        text: "I have cyst-like structure in the nail bed.",
         diseaseName: "Myxoid Pseudocyst",
       },
       {
-        text: "I have growths affecting the nails, .",
+        text: "I have growths affecting the nails.",
         diseaseName: "Malignant Tumors",
       },
     ],
   },
   {
-    text: "Choose an option: Level 2 : 84",
+    text: "Choose an option",
     options: [
       { text: "I have psoriasis of the nail.", nextQuestion: 85 },
       {
@@ -1637,48 +1637,48 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 85",
+    text: "Choose an option",
     options: [
       {
-        text: "I have inflammatory skin condition that commonly affects the nails, causing pitting, ridging, and discoloration.",
+        text: "I have pitting, ridging, and discoloration.",
         diseaseName: "Psoriasis",
       },
       {
-        text: "I have Dark bands or stripes on the nails, which can be benign or indicative of melanoma.",
+        text: "I have dark bands or stripes on the nails.",
         diseaseName: "Pigmented Bands",
       },
       {
-        text: "I have Transverse white lines across the nails, often indicative of systemic illness or toxin exposure.",
+        text: "I have transverse white lines across the nails.",
         diseaseName: "Mees Lines",
       },
     ],
   },
   {
-    text: "Choose an option: 86",
+    text: "Choose an option",
     options: [
       {
-        text: "I have  Separation of the nail plate from the nail bed, often caused by trauma.",
+        text: "I have separation of the nail plate from the nail bed caused by trauma.",
         diseaseName: "Onycholysis",
       },
       {
-        text: "I have shedding or loss of the entire nail plate usually due to severe systemic illness or drug reactions.",
+        text: "I have shedding or loss of the entire nail plate.",
         diseaseName: "Onychomadesis",
       },
       {
-        text: "I have Shedding or loss of part of the nail plate",
+        text: "I have shedding or loss of part of the nail plate",
         diseaseName: "Onychoptosis",
       },
     ],
   },
   {
-    text: "Choose an option: 87",
+    text: "Choose an option",
     options: [
       {
         text: "I have nail deformity caused by repetitive trauma, often from habitual rubbing or picking.",
         diseaseName: "Habit Tic Deformity",
       },
       {
-        text: "I have Nail biting habit, leading to damage and deformity of the nails.",
+        text: "I have nail biting habit, leading to damage and deformity of the nails.",
         diseaseName: "Onychophagia",
       },
       {
@@ -1688,7 +1688,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 88",
+    text: "Choose an option",
     options: [
       { text: "I have itching related issue in skin.", nextQuestion: 89 },
       { text: "I have pain on my skin.", nextQuestion: 98 },
@@ -1697,21 +1697,21 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 89",
+    text: "Choose an option",
     options: [
       { text: "I have redness on my skin.", nextQuestion: 90 },
       { text: "I have rash on my skin.", nextQuestion: 93 },
     ],
   },
   {
-    text: "Choose an option: Level 2 : 90",
+    text: "Choose an option",
     options: [
       { text: "I have inflammation on my skin.", nextQuestion: 91 },
       { text: "I have burning sensation on skin.", nextQuestion: 92 },
     ],
   },
   {
-    text: "Choose an option: 91",
+    text: "Choose an option",
     options: [
       {
         text: "I have excessive growth of skin and enlarged facial Features.",
@@ -1722,7 +1722,7 @@ const questions = [
         diseaseName: "Chilblains",
       },
       {
-        text: "I have dilated blood vessels and frequent bleeding",
+        text: "I have dilated blood vessels and frequent bleeding.",
         diseaseName: "Angioectasias",
       },
       {
@@ -1738,11 +1738,11 @@ const questions = [
         diseaseName: "Xerosis",
       },
       {
-        text: "I have Ring-Shaped Lesion.",
+        text: "I have ring-shaped lesion.",
         diseaseName: "Erythema Annulare Centrifugum",
       },
       {
-        text: "I have lesions, Mucous Membrane secretion.",
+        text: "I have lesions, mucous membrane secretion.",
         diseaseName: "Erythema Multiforme",
       },
       {
@@ -1754,87 +1754,87 @@ const questions = [
         diseaseName: "Pityriasis Rubra Pilaris",
       },
       {
-        text: "I have Rash After Sun Exposure and Lesions",
+        text: "I have rash after sun exposure and lesions.",
         diseaseName: "Polymorphic Light Eruption",
       },
       {
-        text: "I have rash After Sun Exposure, Itching",
+        text: "I have rash after sun exposure, itching",
         diseaseName: "Polymorphous Light Eruption",
       },
     ],
   },
   {
-    text: "Choose an option: 92",
+    text: "Choose an option",
     options: [
       {
-        text: "I have problem after Prolonged Exposure to Heat.",
+        text: "I have problem after prolonged exposure to heat.",
         diseaseName: "Erythema Ab Igne",
       },
       {
-        text: "I have Burning Pain, Increased Skin Temperature.",
+        text: "I have burning pain, increased skin temperature.",
         diseaseName: "Erythromelalgia",
       },
       {
-        text: "I have Pink to Red Stretch Marks on skin",
+        text: "I have pink to red stretch marks on skin",
         diseaseName: "Striae Rubrae",
       },
       {
-        text: "I have Rough, Scaly Lesions.",
+        text: "I have rough, scaly lesions.",
         diseaseName: "Solar Keratoses",
       },
       {
-        text: "I have Central Red Lesion, Radiating Blood Vessels.",
+        text: "I have central red lesion, radiating blood vessels.",
         diseaseName: "Spider Naevus",
       },
       {
-        text: "I have Flat, Brown Spots, Associated with Sun Exposure.",
+        text: "I have flat, brown Spots, associated with sun exposure.",
         diseaseName: "Solar Lentigines",
       },
     ],
   },
   {
-    text: "Choose an option: Level 2 : 93",
+    text: "Choose an option",
     options: [
-      { text: "I have blister related issue..", nextQuestion: 94 },
+      { text: "I have blister related issue.", nextQuestion: 94 },
       { text: "I have dryness of my skin.", nextQuestion: 95 },
       { text: "I have scaling related issue.", nextQuestion: 96 },
       { text: "I have swelling related issue.", nextQuestion: 97 },
     ],
   },
   {
-    text: "Choose an option: 94",
+    text: "Choose an option",
     options: [
       {
-        text: "I have Blister Formation, Itching and Burning Sensation.",
+        text: "I have blister formation, itching and burning sensation.",
         diseaseName: "Adult Linear IgA Bullous Dermatosis",
       },
       {
-        text: "I have Large Blisters,  Itching.",
+        text: "I have large blisters, itching.",
         diseaseName: "Bullous Pemphigoid",
       },
       {
-        text: "I have Itchy Rash on my skin.",
+        text: "I have itchy rash on my skin.",
         diseaseName: "Cutaneous Larva Migrans",
       },
       {
-        text: "I have Persistent and intense itching with symmetrically grouped skin lesions.",
+        text: "I have persistent and intense itching with symmetrically grouped skin lesions.",
         diseaseName: "Dermatitis Herpetiformis",
       },
       {
-        text: "I have Symmetrically distributed reddish-brown papules on the skin.",
+        text: "I have symmetrically distributed reddish-brown papules on the skin.",
         diseaseName: "Gianotti-Crosti Syndrome",
       },
       {
-        text: "I have Presence of painful erosions and ulcers in the oral cavity.",
+        text: "I have presence of painful erosions and ulcers in the oral cavity.",
         diseaseName: "Pemphigus Vulgaris",
       },
     ],
   },
   {
-    text: "Choose an option: 95",
+    text: "Choose an option",
     options: [
       {
-        text: "I have Painful, Central Ulceration, Tender Nodules on Ear.",
+        text: "I have painful, Central Ulceration, Tender Nodules on Ear.",
         diseaseName: "Adult Linear IgA Bullous Dermatosis",
       },
       {
@@ -1842,24 +1842,24 @@ const questions = [
         diseaseName: "Chromoblastomycosis",
       },
       {
-        text: "I have Increased Sensitivity, Flaky Skin with Itching.",
+        text: "I have increased Sensitivity, Flaky Skin with Itching.",
         diseaseName: "Xerosis",
       },
     ],
   },
   {
-    text: "Choose an option: 96",
+    text: "Choose an option",
     options: [
       {
-        text: "I have Tense fluid-filled blisters, mucosal involvement, itching.",
+        text: "I have tense fluid-filled blisters, mucosal involvement, itching.",
         diseaseName: "Adult Linear IgA Bullous Dermatosis",
       },
       {
-        text: "I Small brownish blister, mild itching.",
+        text: "I small brownish blister, mild itching.",
         diseaseName: "Amyloidosis-Macular",
       },
       {
-        text: "I have small papules, darkened pigmentation, itching, fungal infection manifestation..",
+        text: "I have small papules, darkened pigmentation, itching, fungal infection manifestation.",
         diseaseName: "Cladosporiosis",
       },
       {
@@ -1867,32 +1867,32 @@ const questions = [
         diseaseName: "Pityriasis Versicolor",
       },
       {
-        text: "I have circular or oval-shaped  lesions, crusting and scaling, variable itching.",
+        text: "I have circular or oval-shaped lesions, crusting and scaling, variable itching.",
         diseaseName: "Discoid Eczema",
       },
       {
-        text: "I have scaling, alopecic patches, black dot ringworm, itching, fungal infection.",
+        text: "I have scaling, alopecic patches, itching, fungal infection.",
         diseaseName: "Tinea Capitis",
       },
     ],
   },
   {
-    text: "Choose an option: 97",
+    text: "Choose an option",
     options: [
       {
         text: "I have dark, velvety patches, Obesity.",
         diseaseName: "Acanthosis Nigricans",
       },
       {
-        text: "I have Dark, raised, thickened lesions on my hands and feet.",
+        text: "I have dark, raised, thickened lesions on my hands and feet.",
         diseaseName: "Acrokerato-elastoidosis",
       },
       {
-        text: "I have Red papules or vesicles, Fungal infection between toes.",
+        text: "I have red papules or vesicles, fungal infection between toes.",
         diseaseName: "Athlete's Foot (Tinea Pedis)",
       },
       {
-        text: "I have fine scaling, pigmented patches, fungal infection..",
+        text: "I have fine scaling, pigmented patches, fungal infection.",
         diseaseName: "Pityriasis Versicolor",
       },
       {
@@ -1906,14 +1906,14 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 98",
+    text: "Choose an option",
     options: [
       { text: "I have discomfort in my skin.", nextQuestion: 99 },
       { text: "I have tenderness on my skin.", nextQuestion: 100 },
     ],
   },
   {
-    text: "Choose an option: 99",
+    text: "Choose an option",
     options: [
       {
         text: "I have prickly heat with red papules in hot conditions, sweating.",
@@ -1925,23 +1925,19 @@ const questions = [
       },
       {
         text: "I have raised wheals, variable sizes, allergic reaction.",
-        diseaseName: "Hives (Urticaria)",
+        diseaseName: "Hives",
       },
       {
-        text: "I have Red, itchy bumps, variable rash patterns.",
+        text: "I have red, itchy bumps, variable rash patterns.",
         diseaseName: "Insect Bite Reactions",
       },
       {
-        text: "I have Painful nodules on ear helix, single lesion.",
+        text: "I have painful nodules on ear helix, single lesion.",
         diseaseName: "Chondrodermatitis Nodularis Helicis",
       },
       {
         text: "I have fungal infection, especially between toes, itchy, redness and scaling.",
-        diseaseName: "Athlete's Foot (Tinea Pedis)",
-      },
-      {
-        text: "I have fungal infection, especially between toes, itchy, redness and scaling.",
-        diseaseName: "Athlete's Foot (Tinea Pedis)",
+        diseaseName: "Athlete's Foot",
       },
       {
         text: "I have thick, silvery-white scales, joint pain, itching, nail changes.",
@@ -1950,28 +1946,28 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 100",
+    text: "Choose an option",
     options: [
       {
-        text: "I have Painful Nodules, Abscesses, and Scarring in Skin Folds.",
+        text: "I have painful nodules, abscesses, and scarring in skin folds.",
         diseaseName: "Hidradenitis Suppurativa",
       },
       {
-        text: "I have Raised, Overgrown Scars with Continuous Growth.",
+        text: "I have raised, overgrown scars with continuous growth.",
         diseaseName: "Keloids",
       },
       {
-        text: "I have Superficial Blisters with Crusting and Scaling.",
+        text: "I have superficial blisters with crusting and scaling.",
         diseaseName: "Pemphigus Foliaceus ",
       },
       {
-        text: "I have Slow-Growing Ulcer with Rolled Border.",
+        text: "I have slow-growing ulcer with rolled border.",
         diseaseName: "Rodent Ulcer",
       },
     ],
   },
   {
-    text: "Choose an option: Level 2 : 101",
+    text: "Choose an option",
     options: [
       { text: "I have color changing issue.", nextQuestion: 102 },
       { text: "I have texture changes in my skin.", nextQuestion: 103 },
@@ -1979,18 +1975,18 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 102",
+    text: "Choose an option",
     options: [
       {
         text: "I have painful purplish lesions, kidney disease.",
         diseaseName: "Calciphylaxis",
       },
       {
-        text: "I have Pigmented face lesion.",
+        text: "I have pigmented face lesion.",
         diseaseName: "Hutchinson's Melanotic Freckle",
       },
       {
-        text: "I have Warty nodules, fungal infection.",
+        text: "I have warty nodules, fungal infection.",
         diseaseName: "Chromoblastomycosis",
       },
       {
@@ -2006,17 +2002,17 @@ const questions = [
         diseaseName: "Sand-worm Eruption",
       },
       {
-        text: "I have rough, scaly patches due to sun exposure , variable color.",
+        text: "I have rough, scaly patches due to sun exposure, variable color.",
         diseaseName: "Solar Keratoses",
       },
       {
-        text: "I have light to dark brown flat spots on skin..",
+        text: "I have light to dark brown flat spots on skin.",
         diseaseName: "Cafe-au-Lait Macules",
       },
     ],
   },
   {
-    text: "Choose an option: 103",
+    text: "Choose an option",
     options: [
       {
         text: "I have multiple, small, firm papules on hands and feet.",
@@ -2049,18 +2045,18 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 104",
+    text: "Choose an option",
     options: [
       {
         text: "I have abnormal Skin Growth and Enlarged Features.",
         diseaseName: "Acromegaly",
       },
       {
-        text: "I have abnormal Sweating in Palms",
+        text: "I have abnormal sweating in Palms",
         diseaseName: "Palmar Hyperhidrosis",
       },
       {
-        text: "I have skin nodules, loss of sensation..",
+        text: "I have skin nodules, loss of sensation.",
         diseaseName: "Hansen's Disease (Leprosy):",
       },
       {
@@ -2070,7 +2066,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: Level 2 : 105",
+    text: "Choose an option",
     options: [
       { text: "I have scabbing related issue.", nextQuestion: 106 },
       { text: "I have weeping fluid related issue.", nextQuestion: 103 },
@@ -2078,18 +2074,18 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 106",
+    text: "Choose an option",
     options: [
       {
         text: "I have severe acne, abscesses, interconnected nodules, and scarring.",
         diseaseName: "Acne Conglobata",
       },
       {
-        text: "I have solitary, firm, keratotic nodule on fingers or toes.",
+        text: "I have firm, keratotic nodule on fingers or toes.",
         diseaseName: "Palmar Hyperhidrosis",
       },
       {
-        text: "I have small macules, amyloid deposits in skin, often on eyelids.",
+        text: "I have small macules, deposits in skin, often on eyelids.",
         diseaseName: "Amyloidosis- Macular",
       },
       {
@@ -2099,7 +2095,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 107",
+    text: "Choose an option",
     options: [
       {
         text: "I have translucent cysts on fingers or toes, near nails or joints.",
@@ -2120,7 +2116,7 @@ const questions = [
     ],
   },
   {
-    text: "Choose an option: 108",
+    text: "Choose an option",
     options: [
       {
         text: "I have cracking at corners of the mouth.",
@@ -2131,7 +2127,7 @@ const questions = [
         diseaseName: "Aphthous Ulcers",
       },
       {
-        text: "I have persistent red, scaly patches..",
+        text: "I have persistent red, scaly patches.",
         diseaseName: "Cutaneous B-Cell Lymphoma",
       },
       {
@@ -2139,7 +2135,7 @@ const questions = [
         diseaseName: "Candidiasis",
       },
       {
-        text: "I have warts and skin lesions caused by HPV infection, with various morphologies..",
+        text: "I have warts and skin lesions caused by HPV infection, with various morphologies.",
         diseaseName: "Human Papillomavirus",
       },
     ],

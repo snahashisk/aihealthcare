@@ -57,8 +57,14 @@ const Login = () => {
   return (
     <div className="w-screen h-screen overflow-hidden flex">
       <div className="w-1/2 h-full py-16 px-40">
-        <h1 className="text-2xl font-bold mb-8 text-teal-700">
-          <span className="text-yellow-600">AI </span>HEALTHCARE
+        <h1
+          className="text-2xl font-bold mb-8 text-teal-700 cursor-pointer"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <span className="text-yellow-600">AI </span>
+          HEALTHCARE
         </h1>
         <h3 className="text-4xl font-semibold text-gray-600 mb-3">
           Login to your Account

@@ -142,7 +142,7 @@ const Akinator = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-smoke-light flex backdrop-blur-md duration-75 font-sans">
+    <div className="fixed inset-0 z-50 overflow-hidden bg-smoke-light flex backdrop-blur-md duration-75">
       <div className="relative bg-white w-full max-w-md m-auto flex-col flex rounded-lg h-4/5 overflow-y-scroll no-scrollbar">
         <div className="flex justify-between items-center pb-3 bg-teal-500 px-6 py-3">
           <p className="text-2xl font-semibold text-white">DISEASE PREDICTOR</p>
@@ -208,8 +208,8 @@ const Akinator = ({
               </>
             ) : (
               <p className="my-4">
-                "You don't need to upload a photo, upper mentioned disease is
-                the final prediction."
+                You don't need to upload a photo, upper mentioned disease is the
+                final prediction.
               </p>
             )}
 
