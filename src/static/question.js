@@ -1144,7 +1144,7 @@ const questions = [
         diseaseName: "Ocular Ataxia",
       },
       {
-        text: "I have wision loss, bird-like movements, seizures, confusion, vomiting, coma risk, behavioral changes.",
+        text: "I have vision loss, bird-like movements, seizures, confusion, vomiting, coma risk, behavioral changes.",
         diseaseName: "Ocular Albinism",
       },
       {

@@ -142,13 +142,13 @@ const Akinator = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-smoke-light flex backdrop-blur-md duration-75">
-      <div className="relative p-8 bg-white w-full max-w-md m-auto flex-col flex rounded-lg h-4/5 overflow-y-scroll no-scrollbar">
-        <div className="flex justify-between items-center pb-3">
-          <p className="text-3xl font-bold text-teal-600">DISEASE PREDICTOR</p>
+    <div className="fixed inset-0 z-50 overflow-hidden bg-smoke-light flex backdrop-blur-md duration-75 font-sans">
+      <div className="relative bg-white w-full max-w-md m-auto flex-col flex rounded-lg h-4/5 overflow-y-scroll no-scrollbar">
+        <div className="flex justify-between items-center pb-3 bg-teal-500 px-6 py-3">
+          <p className="text-2xl font-semibold text-white">DISEASE PREDICTOR</p>
           <div className="cursor-pointer z-50" onClick={handleCloseModal}>
             <svg
-              className="fill-current text-black"
+              className="fill-current text-white"
               xmlns="http://www.w3.org/2000/svg"
               width="18"
               height="18"
@@ -159,7 +159,7 @@ const Akinator = ({
           </div>
         </div>
         {currentQuestion < questions.length ? (
-          <div>
+          <div className="p-6">
             <p className="mb-4">{questions[currentQuestion].text}</p>
             <ul className="list-none">
               {questions[currentQuestion].options.map((option, index) => (
@@ -182,29 +182,36 @@ const Akinator = ({
             )}
           </div>
         ) : finalResult ? (
-          <div>
+          <div className="p-6">
             <p className="text-lg m-auto">
               Based on your answers, the possible condition could be:{" "}
               <strong>{finalResult}</strong>
             </p>
-            <p className="my-4">
-              {allConditions.includes(finalResult.toLowerCase())
-                ? "Please upload a photo of your affected area."
-                : "You don't need to upload a photo, upper mentioned disease is the final prediction."}
-            </p>
-            <input
-              type="file"
-              accept="image/jpg, image/jpeg"
-              onChange={handleFileChange}
-              className="mr-4 py-2 px-4 rounded-md border-0 text-sm font-semibold bg-violet-50 text-violet-700 hover:file:bg-violet-100"
-            />
 
-            <button
-              onClick={predictImage}
-              className="px-4 py-2 mt-4 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none"
-            >
-              Predict
-            </button>
+            {allConditions.includes(finalResult.toLowerCase()) ? (
+              <>
+                <p className="my-4">
+                  Please upload a photo of your affected area.
+                </p>
+                <input
+                  type="file"
+                  accept="image/jpg, image/jpeg"
+                  onChange={handleFileChange}
+                  className="w-full mr-4 py-2 px-4 rounded-md border-0 text-sm font-semibold bg-violet-50 text-violet-700 hover:file:bg-violet-100"
+                />
+                <button
+                  onClick={predictImage}
+                  className="px-4 py-2 mt-4 w-full bg-green-600 text-white rounded-md hover:bg-green-600 focus:outline-none"
+                >
+                  Predict
+                </button>
+              </>
+            ) : (
+              <p className="my-4">
+                "You don't need to upload a photo, upper mentioned disease is
+                the final prediction."
+              </p>
+            )}
 
             {prediction && (
               <div className="mt-4">
