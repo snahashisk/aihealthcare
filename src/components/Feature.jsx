@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 const Feature = () => {
   const navigate = useNavigate();
-  const handleLoginClick = () => {
-    navigate("/login");
+  const handleRegisterClick = () => {
+    navigate("/registration");
   };
 
   return (
@@ -28,34 +28,34 @@ const Feature = () => {
         <div className="w-1/5 bg-white text-center rounded-md overflow-hidden">
           <img src={image1} alt="MyImage" className="mb-4 shadow-lg" />
           <h4 className="text-lg font-bold text-teal-700">NAIL DISEASE</h4>
-          <p className="mb-4">30 Disease</p>
+          <p className="mb-4">130 Disease</p>
         </div>
         <div className="w-1/5 bg-white text-center rounded-md overflow-hidden">
           <img src={image2} alt="MyImage" className="mb-4 shadow-lg" />
           <h4 className="text-lg font-bold text-teal-700">SCALP DISEASE</h4>
-          <p className="mb-4">43 Disease</p>
+          <p className="mb-4">173 Disease</p>
         </div>
         <div className="w-1/5 bg-white text-center rounded-md overflow-hidden">
           <img src={image3} alt="MyImage" className="mb-4 shadow-lg" />
           <h4 className="text-lg font-bold text-teal-700">SKIN DISEASE</h4>
-          <p className="mb-4">57 Disease</p>
+          <p className="mb-4">757 Disease</p>
         </div>
         <div className="w-1/5 bg-white text-center rounded-md overflow-hidden">
           <img src={image4} alt="MyImage" className="mb-4 shadow-lg" />
           <h4 className="text-lg font-bold text-teal-700">EYE DISEASE</h4>
-          <p className="mb-4">28 Disease</p>
+          <p className="mb-4">128 Disease</p>
         </div>
         <div className="w-1/5 bg-white text-center rounded-md overflow-hidden">
           <img src={image5} alt="MyImage" className="mb-4 shadow-lg" />
           <h4 className="text-lg font-bold text-teal-700">TEETH DISEASE</h4>
-          <p className="mb-4">42 Disease</p>
+          <p className="mb-4">82 Disease</p>
         </div>
       </div>
       <button
         className="mt-16 px-8 py-2 rounded-md bg-teal-500 text-lg text-white"
-        onClick={handleLoginClick}
+        onClick={handleRegisterClick}
       >
-        Login For More
+        Register Here
       </button>
     </div>
   );

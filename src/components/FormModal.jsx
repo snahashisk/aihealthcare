@@ -204,7 +204,7 @@ const FormModal = ({ isOpen, closeModal, updateInfo, userData }) => {
               className="block text-gray-700 text-md font-semibold mb-2"
               htmlFor="age"
             >
-              Blood Sugar Value
+              Blood Sugar Scale
             </label>
             <input
               type="number"

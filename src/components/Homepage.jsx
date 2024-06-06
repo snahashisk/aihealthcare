@@ -4,6 +4,10 @@ import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
   const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
+
   const handleRegisterClick = () => {
     navigate("/registration");
   };
@@ -19,7 +23,7 @@ const Homepage = () => {
         </div>
         <div className="mt-20">
           <h1 className="text-7xl w-3/5 pt-16 text-white">
-            WE PROVIDE BEST HEALTHCARE
+            WE PROVIDE NEEDED HEALTHCARE
           </h1>
           <p className="w-2/5 mt-10 text-white text-base mb-10">
             Welcome to our AI-powered healthcare platform, where cutting-edge
@@ -27,12 +31,20 @@ const Homepage = () => {
             health solutions designed to enhance your well-being. Your journey
             to optimal health begins here.
           </p>
-          <button
-            className="px-8 py-2 bg-white rounded-md text-teal-600 text-lg"
-            onClick={handleRegisterClick}
-          >
-            Register Now
-          </button>
+          <div className="flex gap-5">
+            <button
+              className="px-8 py-2 bg-amber-500 rounded-md text-white text-lg"
+              onClick={handleLoginClick}
+            >
+              Login Here
+            </button>
+            <button
+              className="px-8 py-2 bg-white rounded-md text-teal-600 text-lg"
+              onClick={handleRegisterClick}
+            >
+              Register Here
+            </button>
+          </div>
         </div>
       </div>
     </div>

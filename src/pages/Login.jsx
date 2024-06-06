@@ -4,9 +4,12 @@ import {
   AiOutlineGoogle,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import bgimage from "../img/doc-2.png";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../contexts/UserContext";
+import { useNotifications } from "../contexts/NotificationContext";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -14,9 +17,12 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const { setUser } = useUserContext();
+  const [loading, setLoading] = useState(false);
+  const { addNotification } = useNotifications();
 
   const handleLogin = async (event) => {
     event.preventDefault();
+    setLoading(true);
     try {
       const response = await fetch("https://backend-ywtx.onrender.com/login", {
         method: "POST",
@@ -31,10 +37,16 @@ const Login = () => {
       }
 
       const userData = await response.json();
-      localStorage.setItem("user", JSON.stringify({ userId: userData.userId }));
+      sessionStorage.setItem(
+        "user",
+        JSON.stringify({ userId: userData.userId })
+      );
       setUser({ userId: userData.userId });
+      setLoading(false);
       navigate("/dashboard");
+      addNotification("Welcome to AI Healthcare. We are here to help you.");
     } catch (error) {
+      setLoading(false);
       setErrorMessage(error.message);
     }
   };
@@ -107,12 +119,18 @@ const Login = () => {
               placeholder="Enter your password"
             />
           </div>
-          {errorMessage && <p className="text-red-500">{errorMessage}</p>}
           <button
             type="submit"
-            className="mt-8 mb-6 bg-teal-400 text-white font-medium w-full py-3 rounded-md"
+            className="mt-8 mb-6 bg-teal-400 text-white font-medium w-full py-3 rounded-md overflow-hidden"
           >
-            Login
+            {loading ? (
+              <div className="flex gap-2 justify-center">
+                <FontAwesomeIcon icon={faSpinner} spin size="lg" className="" />
+                Loading
+              </div>
+            ) : (
+              "Login"
+            )}
           </button>
         </form>
         <p className="text-center">

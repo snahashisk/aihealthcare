@@ -10,6 +10,7 @@ import {
   faSignOutAlt,
   faPenToSquare,
   faMars,
+  faUpload,
 } from "@fortawesome/free-solid-svg-icons";
 import BmiChart from "../components/BmiChart";
 import Akinator from "../components/Akinator";
@@ -18,17 +19,32 @@ import ComplexInfo from "../components/ComplexInfo";
 import Marker from "../components/Marker";
 import humanModel from "../img/human.jpg";
 import FormModal from "../components/FormModal";
+import PdfTextExtractor from "../components/PdfExtractor";
+import NotificationModal from "../components/NoficationModal";
 import { useNavigate } from "react-router-dom";
+import { useNotifications } from "../contexts/NotificationContext";
 
 const Dashboard = () => {
   const { user, setUser } = useUserContext();
   const navigate = useNavigate();
+  const { notifications } = useNotifications();
+
+  useEffect(() => {
+    const storedUser = sessionStorage.getItem("user");
+    console.log(storedUser);
+    if (!storedUser) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   const handleLogout = () => {
-    localStorage.removeItem("user");
+    sessionStorage.removeItem("user");
     navigate("/");
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPdfExtractorOpen, setIsPdfExtractorOpen] = useState(false);
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [answers, setAnswers] = useState({});
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [finalResult, setFinalResult] = useState("");
@@ -48,6 +64,15 @@ const Dashboard = () => {
     setFinalResult("");
     setIsModalOpen(false);
   };
+
+  const closePdfExtractor = () => {
+    setIsPdfExtractorOpen(false);
+  };
+
+  const closeNotificationModal = () => {
+    setIsNotificationOpen(false);
+  };
+
   const [userInfo, setUserInfo] = useState({
     name: "",
     age: "",
@@ -62,7 +87,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const loadUser = () => {
-      const storedUser = localStorage.getItem("user");
+      const storedUser = sessionStorage.getItem("user");
       return storedUser ? JSON.parse(storedUser) : null;
     };
 
@@ -74,6 +99,15 @@ const Dashboard = () => {
 
     fetchUserData(currentUser.userId);
   }, [user, setUser, navigate]);
+
+  useEffect(() => {
+    if (userInfo.age === null) {
+      const timer = setTimeout(() => {
+        setIsFormModalOpen(true);
+      }, 1000); // Set delay here
+      return () => clearTimeout(timer);
+    }
+  }, [userInfo.age]);
 
   const fetchUserData = async (userId) => {
     try {
@@ -152,7 +186,11 @@ const Dashboard = () => {
             <FontAwesomeIcon icon={faHeart} className="mr-2" /> Health
           </h3>
           <h3
-            onClick={() => handleClick("Notification")}
+            onClick={() => {
+              handleClick("Notification");
+              console.log(notifications[10]);
+              setIsNotificationOpen(true);
+            }}
             className={`${
               selectedItem === "Notification" ? "text-teal-500" : ""
             } cursor-pointer`}
@@ -187,26 +225,40 @@ const Dashboard = () => {
       <div className="w-8/12 h-full p-8 bg-gradient-to-r from-gray-100 to-gray-50">
         <div className="flex justify-between items-center">
           <div>
-            <p className="text-gray-500">Good Morning</p>
+            <p className="text-gray-500">Welcome</p>
             <p className="text-5xl font-semibold text-teal-800 flex items-center gap-4">
               {userInfo.name}{" "}
               <FontAwesomeIcon icon={faMars} className="text-3xl" />
             </p>
           </div>
-          <div>
+          <div className="flex">
             <FontAwesomeIcon
               icon={faPenToSquare}
               className="mr-2 bg-teal-400 p-3 text-2xl rounded-md text-white drop-shadow-md cursor-pointer"
               onClick={() => setIsFormModalOpen(true)}
             />
             <FontAwesomeIcon
-              icon={faBell}
+              icon={faUpload}
               className="mr-2 bg-teal-400 p-3 text-2xl rounded-md text-white drop-shadow-md cursor-pointer"
+              onClick={() => setIsPdfExtractorOpen(true)}
             />
-            <FontAwesomeIcon
-              icon={faUser}
-              className="mr-2 bg-teal-400 p-3 text-2xl rounded-md text-white cursor-pointer drop-shadow-md"
-            />
+
+            <div
+              className="mr-2 relative"
+              onClick={() => {
+                setIsNotificationOpen(true);
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faBell}
+                className="bg-teal-400 p-3 text-2xl rounded-md text-white drop-shadow-md cursor-pointer"
+              />
+              {notifications.length > 0 && (
+                <div className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex justify-center items-center text-sm ">
+                  {notifications.length}
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <SimpleInfo
@@ -278,6 +330,16 @@ const Dashboard = () => {
             setCurrentQuestion={setCurrentQuestion}
             finalResult={finalResult}
             setFinalResult={setFinalResult}
+          />
+
+          <PdfTextExtractor
+            isOpen={isPdfExtractorOpen}
+            closeModal={closePdfExtractor}
+          />
+
+          <NotificationModal
+            isOpen={isNotificationOpen}
+            closeModal={closeNotificationModal}
           />
         </div>
       </div>

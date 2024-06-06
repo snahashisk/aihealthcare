@@ -13,6 +13,8 @@ const Registration = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setlastName] = useState("");
 
   const handleLogin = () => {
     navigate("/login");
@@ -33,7 +35,7 @@ const Registration = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email, password }),
+          body: JSON.stringify({ email, password, firstName, lastName }),
         }
       );
 
@@ -55,14 +57,14 @@ const Registration = () => {
         <img src={bgimage} className="h-full w-full" alt="background" />
       </div>
       <form className="w-1/2 h-full py-16 px-40" onSubmit={handleSubmit}>
-        <h1 className="text-2xl font-bold mb-8 text-teal-700">
+        <h1 className="text-2xl font-bold mb-4 text-teal-700">
           <span className="text-yellow-600">AI </span>HEALTHCARE
         </h1>
         <h3 className="text-4xl font-semibold text-gray-600 mb-3">
           Create an Account
         </h3>
         <p className="text-gray-600">Join us! Register with a method:</p>
-        <div className="flex justify-around py-6">
+        <div className="flex justify-around pt-3 pb-6">
           <div className="flex gap-1 border-2 border-gray-200 px-6 py-2 rounded-md text-md cursor-pointer">
             <AiOutlineGoogle className="text-2xl text-teal-600" />
             <p>Google</p>
@@ -77,8 +79,42 @@ const Registration = () => {
           </div>
         </div>
 
-        <div className="flex flex-col pt-4 pb-4">
-          <label htmlFor="email" className="text-gray-700 font-semibold pb-2">
+        <div className="flex pb-2 gap-3">
+          <div className="flex flex-col group">
+            <label
+              htmlFor="name"
+              className="text-gray-700 font-semibold pb-1 group-hover:text-teal-600 duration-200"
+            >
+              First Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+              placeholder="Enter First Name"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="name" className="text-gray-700 font-semibold pb-1">
+              Last Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="name"
+              value={lastName}
+              onChange={(e) => setlastName(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+              placeholder="Enter Last Name"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col pb-2">
+          <label htmlFor="email" className="text-gray-700 font-semibold pb-1 ">
             Email address
           </label>
           <input
@@ -87,15 +123,15 @@ const Registration = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
             placeholder="Enter your email"
           />
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col pb-2">
           <label
             htmlFor="password"
-            className="text-gray-700 font-semibold pb-2"
+            className="text-gray-700 font-semibold pb-1"
           >
             Password
           </label>
@@ -105,15 +141,15 @@ const Registration = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
             placeholder="Enter your password"
           />
         </div>
 
-        <div className="flex flex-col py-2">
+        <div className="flex flex-col pb-2">
           <label
             htmlFor="confirmPassword"
-            className="text-gray-700 font-semibold pb-2"
+            className="text-gray-700 font-semibold pb-1"
           >
             Confirm Password
           </label>
@@ -123,7 +159,7 @@ const Registration = () => {
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
             placeholder="Confirm your password"
           />
         </div>
@@ -144,7 +180,7 @@ const Registration = () => {
 
         <button
           type="submit"
-          className="mt-8 mb-6 bg-teal-400 text-white font-medium w-full py-3 rounded-md"
+          className="my-2 bg-teal-400 text-white font-medium w-full py-3 rounded-md"
         >
           Register
         </button>
@@ -152,7 +188,7 @@ const Registration = () => {
         <p className="text-center">
           Already have an account?{" "}
           <button
-            className="text-teal-700 cursor-pointer"
+            className="text-teal-700 cursor-pointer font-medium"
             onClick={handleLogin}
           >
             Login here
