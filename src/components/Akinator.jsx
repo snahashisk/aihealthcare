@@ -33,22 +33,23 @@ const Akinator = ({
   const [questionHistory, setQuestionHistory] = useState([]);
   const { addNotification } = useNotifications();
 
-  const loadModel = async (url, modelName) => {
-    console.log(`Starting download for ${modelName} model`);
-    const model = await tmImage.load(url + "model.json", url + "metadata.json");
-    addNotification(`${modelName} model downloaded`);
-    return model;
-  };
-
   const loadModels = useCallback(async () => {
+    const loadModel = async (url, modelName) => {
+      console.log(`Starting download for ${modelName} model`);
+      const model = await tmImage.load(
+        url + "model.json",
+        url + "metadata.json"
+      );
+      return model;
+    };
+
     const teethModel = await loadModel(teethUrl, "Teeth");
     const eyeModel = await loadModel(eyeUrl, "Eye");
     const nailModel = await loadModel(nailUrl, "Nail");
     const scalpModel = await loadModel(scalpUrl, "Scalp");
     const skinModel = await loadModel(skinUrl, "Skin");
-
-    setModels({ teethModel, eyeModel, nailModel, scalpModel, skinModel });
     addNotification("All models are downloaded. You are ready to go.");
+    setModels({ teethModel, eyeModel, nailModel, scalpModel, skinModel });
   }, [addNotification]);
 
   useEffect(() => {

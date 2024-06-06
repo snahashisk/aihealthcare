@@ -3,13 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useUserContext } from "../contexts/UserContext";
 import {
   faHouse,
-  faHeart,
   faBell,
-  faUser,
-  faGear,
   faSignOutAlt,
   faPenToSquare,
-  faMars,
   faUpload,
 } from "@fortawesome/free-solid-svg-icons";
 import BmiChart from "../components/BmiChart";
@@ -31,7 +27,6 @@ const Dashboard = () => {
 
   useEffect(() => {
     const storedUser = sessionStorage.getItem("user");
-    console.log(storedUser);
     if (!storedUser) {
       navigate("/login");
     }
@@ -129,8 +124,19 @@ const Dashboard = () => {
     }
   };
 
-  // Update user data in the backend and refetc
   const updateUserInfo = async (newInfo) => {
+    const loadUser = () => {
+      const storedUser = sessionStorage.getItem("user");
+      return storedUser ? JSON.parse(storedUser) : null;
+    };
+
+    const currentUser = user || loadUser();
+    if (!currentUser || !currentUser.userId) {
+      console.error("No user information available");
+      navigate("/login");
+      return;
+    }
+
     try {
       const response = await fetch(
         `https://backend-ywtx.onrender.com/updateUserData`,
@@ -139,7 +145,7 @@ const Dashboard = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ userId: user.userId, ...newInfo }),
+          body: JSON.stringify({ userId: currentUser.userId, ...newInfo }),
         }
       );
 
@@ -148,7 +154,7 @@ const Dashboard = () => {
         throw new Error(result.error || "Failed to update data");
       }
 
-      fetchUserData(user.userId);
+      await fetchUserData(currentUser.userId);
     } catch (error) {
       console.error("Error updating user data:", error);
     }
@@ -178,14 +184,6 @@ const Dashboard = () => {
             <FontAwesomeIcon icon={faHouse} className="mr-2" /> Dashboard
           </h3>
           <h3
-            onClick={() => handleClick("Health")}
-            className={`${
-              selectedItem === "Health" ? "text-teal-500" : ""
-            } cursor-pointer`}
-          >
-            <FontAwesomeIcon icon={faHeart} className="mr-2" /> Health
-          </h3>
-          <h3
             onClick={() => {
               handleClick("Notification");
               console.log(notifications[10]);
@@ -197,23 +195,7 @@ const Dashboard = () => {
           >
             <FontAwesomeIcon icon={faBell} className="mr-2" /> Notification
           </h3>
-          <p className="text-base font-normal">Tools</p>
-          <h3
-            onClick={() => handleClick("Profile")}
-            className={`${
-              selectedItem === "Profile" ? "text-teal-500" : ""
-            } cursor-pointer`}
-          >
-            <FontAwesomeIcon icon={faUser} className="mr-2" /> Profile
-          </h3>
-          <h3
-            onClick={() => handleClick("Settings")}
-            className={`${
-              selectedItem === "Settings" ? "text-teal-500" : ""
-            } cursor-pointer`}
-          >
-            <FontAwesomeIcon icon={faGear} className="mr-2" /> Settings
-          </h3>
+
           <h3
             className="cursor-pointer absolute bottom-6 text-red-500"
             onClick={handleLogout}
@@ -228,7 +210,6 @@ const Dashboard = () => {
             <p className="text-gray-500">Welcome</p>
             <p className="text-5xl font-semibold text-teal-800 flex items-center gap-4">
               {userInfo.name}{" "}
-              <FontAwesomeIcon icon={faMars} className="text-3xl" />
             </p>
           </div>
           <div className="flex">
